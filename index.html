@@ -1,18 +1,15 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="hi" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kushwaha Bazar (कुशवाहा बाजार) | Fashion Boutique in Robertsganj, UP</title>
-  <meta name="description" content="Discover stylish fashion collections at Kushwaha Bazar (कुशवाहा बाजार), Uttar Mohal, Robertsganj, Uttar Pradesh. Ethnic wear, men's & women's fashion, and everyday essentials.">
-  <meta property="og:title" content="Kushwaha Bazar | Premium Fashion in Robertsganj">
-  <meta property="og:description" content="Visit Kushwaha Bazar in Robertsganj, UP for curated collections of ethnic wear, contemporary styles, and festive fashion.">
-  <meta property="og:type" content="website">
+  <meta name="description" content="Kushwaha Bazar (कुशवाहा बाजार), Uttar Mohal, Robertsganj, UP. बनारसी साड़ियां, लहंगे, कुर्ता-पायजामा, शेरवानी और डेली वियर कपड़े।">
 
-  <!-- Google Fonts: Playfair Display & Inter -->
+  <!-- Google Fonts: Rozha One, Playfair Display & Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Rozha+One&display=swap" rel="stylesheet">
 
   <!-- Lucide Icons CDN -->
   <script src="https://unpkg.com/lucide@latest"></script>
@@ -25,19 +22,20 @@
       theme: {
         extend: {
           colors: {
-            primary: '#111111',
-            ivory: '#FAF8F3',
+            primary: '#18110D',
+            ivory: '#FBF9F5',
+            maroon: '#7E191B',
             gold: {
-              DEFAULT: '#C8A96B',
-              dark: '#B08E4F',
-              light: '#E1CA9E'
+              DEFAULT: '#C69234',
+              dark: '#9F711E',
+              light: '#E5C07B'
             },
-            charcoal: '#292929',
-            muted: '#777777',
-            cardBg: '#FFFFFF',
+            charcoal: '#262220',
+            muted: '#6E6763',
           },
           fontFamily: {
             serif: ['"Playfair Display"', 'Georgia', 'serif'],
+            hindi: ['"Rozha One"', 'Georgia', 'serif'],
             sans: ['"Inter"', 'system-ui', '-apple-system', 'sans-serif'],
           }
         }
@@ -52,7 +50,7 @@
     "@type": "ClothingStore",
     "name": "Kushwaha Bazar",
     "alternateName": "कुशवाहा बाजार",
-    "image": "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1200&q=80",
+    "image": "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1200&q=80",
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "Uttar Mohal",
@@ -69,72 +67,79 @@
         "closes": "21:30"
       }
     ],
-    "priceRange": "$$"
+    "priceRange": "₹₹"
   }
   </script>
-
-    <link rel="stylesheet" href="style.css">
-
 </head>
 <body class="bg-ivory text-charcoal font-sans antialiased selection:bg-gold selection:text-white relative">
 
-  <!-- Top Announcement Bar -->
-  <div class="bg-primary text-gold text-xs sm:text-sm py-2 px-4 text-center tracking-wide font-medium flex items-center justify-center gap-2 border-b border-gold/20">
-    <i data-lucide="sparkles" class="w-3.5 h-3.5"></i>
-    <span>Welcome to Kushwaha Bazar — Robertsganj's Local Fashion Hub | Visit In-Store Today</span>
-    <span class="hidden md:inline text-white/50">• Open 7:00 AM – 9:30 PM Everyday</span>
+  <!-- Top Announcement Bar with Live Language Switcher -->
+  <div class="bg-primary text-gold text-xs sm:text-sm py-2 px-4 text-center tracking-wide font-medium flex items-center justify-between border-b border-gold/20">
+    <div class="max-w-7xl mx-auto w-full flex items-center justify-between">
+      <div class="flex items-center gap-2 mx-auto sm:mx-0">
+        <i data-lucide="sparkles" class="w-3.5 h-3.5 text-gold-light"></i>
+        <span data-i18n="announcement">कुशवाहा बाजार में आपका स्वागत है — राबर्ट्सगंज का विश्वसनीय वस्त्र केंद्र</span>
+        <span class="hidden md:inline text-white/50">• <span data-i18n="timing_tag">सुबह 7:00 से रात 9:30 तक खुला</span></span>
+      </div>
+
+      <!-- Hindi / English Interactive Button -->
+      <button id="lang-switch-btn" type="button" class="flex items-center gap-1.5 px-3 py-1 rounded-full border border-gold/40 text-xs text-white bg-gold/15 hover:bg-gold hover:text-primary transition font-semibold">
+        <i data-lucide="languages" class="w-3.5 h-3.5 text-gold"></i>
+        <span id="current-lang-label">English में देखें</span>
+      </button>
+    </div>
   </div>
 
   <!-- Sticky Header Navigation -->
-  <header id="main-header" class="sticky top-0 z-40 w-full transition-all duration-300 bg-ivory/90 backdrop-blur-md border-b border-charcoal/5">
+  <header id="main-header" class="sticky top-0 z-40 w-full transition-all duration-300 bg-ivory/95 backdrop-blur-md border-b border-charcoal/10 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
       
       <!-- Logo Branding -->
       <a href="#home" class="flex flex-col group focus:outline-none">
-        <span class="font-serif text-2xl sm:text-3xl font-bold tracking-tight text-primary group-hover:text-gold transition-colors">
+        <span class="font-serif text-2xl sm:text-3xl font-extrabold tracking-tight text-maroon group-hover:text-gold transition-colors">
           KUSHWAHA BAZAR
         </span>
-        <span class="text-xs font-serif tracking-widest text-gold font-semibold uppercase -mt-1">
-          कुशवाहा बाजार • ROBERTSGANJ
+        <span class="text-xs font-serif tracking-widest text-gold font-bold uppercase -mt-1">
+          कुशवाहा बाजार • उत्तर मोहाल, राबर्ट्सगंज
         </span>
       </a>
 
       <!-- Desktop Navigation Menu -->
-      <nav class="hidden lg:flex items-center space-x-8 text-sm font-medium tracking-wide">
-        <a href="#home" class="nav-link text-primary hover:text-gold transition-colors pb-1 border-b-2 border-transparent hover:border-gold">Home</a>
-        <a href="#collections" class="nav-link text-charcoal hover:text-gold transition-colors pb-1 border-b-2 border-transparent hover:border-gold">Collections</a>
-        <a href="#products" class="nav-link text-charcoal hover:text-gold transition-colors pb-1 border-b-2 border-transparent hover:border-gold">Trending</a>
-        <a href="#about" class="nav-link text-charcoal hover:text-gold transition-colors pb-1 border-b-2 border-transparent hover:border-gold">About Us</a>
-        <a href="#gallery" class="nav-link text-charcoal hover:text-gold transition-colors pb-1 border-b-2 border-transparent hover:border-gold">Gallery</a>
-        <a href="#reviews" class="nav-link text-charcoal hover:text-gold transition-colors pb-1 border-b-2 border-transparent hover:border-gold">Reviews</a>
-        <a href="#store-info" class="nav-link text-charcoal hover:text-gold transition-colors pb-1 border-b-2 border-transparent hover:border-gold">Store & Hours</a>
-        <a href="#contact" class="nav-link text-charcoal hover:text-gold transition-colors pb-1 border-b-2 border-transparent hover:border-gold">Contact</a>
+      <nav class="hidden lg:flex items-center space-x-7 text-sm font-medium tracking-wide">
+        <a href="#home" class="nav-link text-primary hover:text-gold transition-colors pb-1 border-b-2 border-transparent hover:border-gold" data-i18n="nav_home">होम</a>
+        <a href="#collections" class="nav-link text-charcoal hover:text-gold transition-colors pb-1 border-b-2 border-transparent hover:border-gold" data-i18n="nav_collections">संग्रह (कलेक्शन)</a>
+        <a href="#products" class="nav-link text-charcoal hover:text-gold transition-colors pb-1 border-b-2 border-transparent hover:border-gold" data-i18n="nav_trending">ट्रेंडिंग साड़ियां व परिधान</a>
+        <a href="#about" class="nav-link text-charcoal hover:text-gold transition-colors pb-1 border-b-2 border-transparent hover:border-gold" data-i18n="nav_about">हमारे बारे में</a>
+        <a href="#gallery" class="nav-link text-charcoal hover:text-gold transition-colors pb-1 border-b-2 border-transparent hover:border-gold" data-i18n="nav_gallery">गैलरी</a>
+        <a href="#reviews" class="nav-link text-charcoal hover:text-gold transition-colors pb-1 border-b-2 border-transparent hover:border-gold" data-i18n="nav_reviews">ग्राहकों की राय</a>
+        <a href="#store-info" class="nav-link text-charcoal hover:text-gold transition-colors pb-1 border-b-2 border-transparent hover:border-gold" data-i18n="nav_store">दुकान का पता</a>
+        <a href="#contact" class="nav-link text-charcoal hover:text-gold transition-colors pb-1 border-b-2 border-transparent hover:border-gold" data-i18n="nav_contact">संपर्क करें</a>
       </nav>
 
-      <!-- Header Utilities: Search, Wishlist, WhatsApp Button & Mobile Toggle -->
+      <!-- Header Utilities -->
       <div class="flex items-center space-x-3 sm:space-x-4">
         <!-- Quick Search Trigger -->
-        <button id="search-toggle-btn" aria-label="Open Product Search" class="p-2 text-charcoal hover:text-gold rounded-full hover:bg-gold/10 transition">
+        <button id="search-toggle-btn" aria-label="Search" class="p-2 text-charcoal hover:text-gold rounded-full hover:bg-gold/10 transition">
           <i data-lucide="search" class="w-5 h-5"></i>
         </button>
 
         <!-- Wishlist Icon with Counter -->
         <button id="wishlist-btn" aria-label="View Saved Items" class="p-2 text-charcoal hover:text-gold rounded-full hover:bg-gold/10 transition relative">
           <i data-lucide="heart" class="w-5 h-5"></i>
-          <span id="wishlist-badge" class="absolute -top-1 -right-1 bg-gold text-white text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center">0</span>
+          <span id="wishlist-badge" class="absolute -top-1 -right-1 bg-maroon text-white text-[10px] font-bold rounded-full w-5 h-5 flex items-center justify-center">0</span>
         </button>
 
         <!-- WhatsApp Quick Connect Button -->
-        <a href="https://wa.me/?text=Hello%20Kushwaha%20Bazar%2C%20I%20would%20like%20to%20enquire%20about%20your%20clothing%20collection." 
+        <a href="https://wa.me/?text=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%20%E0%A4%95%E0%A5%81%E0%A4%B6%E0%A4%B5%E0%A4%BE%E0%A4%B9%E0%A4%BE%20%E0%A4%AC%E0%A4%BE%E0%A4%9C%E0%A4%BE%E0%A4%B0%2C%20%E0%A4%AE%E0%A5%81%E0%A4%9B%E0%A5%87%20%E0%A4%86%E0%A4%AA%E0%A4%95%E0%A5%87%20%E0%A4%B8%E0%A4%BE%E0%A4%A1%E0%A4%BC%E0%A5%80%20%E0%A4%B5%20%E0%A4%95%E0%A4%AA%E0%A4%A1%E0%A4%BC%E0%A5%8B%E0%A4%82%20%E0%A4%95%E0%A5%87%20%E0%A4%95%E0%A4%B2%E0%A5%87%E0%A4%95%E0%A5%8D%E0%A4%B6%E0%A4%A8%20%E0%A4%95%E0%A5%87%20%E0%A4%AC%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%AE%E0%A5%87%E0%A4%82%20%E0%A4%9C%E0%A4%BE%E0%A4%A8%E0%A4%95%E0%A4%BE%E0%A4%B0%E0%A5%80%20%E0%A4%9A%E0%A4%BE%E0%A4%B9%E0%A4%BF%E0%A4%8F%E0%A5%A4" 
            target="_blank" 
            rel="noopener noreferrer" 
-           class="hidden sm:inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1EBE5B] text-white px-4 py-2 rounded-full text-xs font-semibold tracking-wider uppercase transition shadow-sm hover:shadow">
+           class="hidden sm:inline-flex items-center gap-2 bg-[#25D366] hover:bg-[#1EBE5B] text-white px-4 py-2 rounded-full text-xs font-semibold tracking-wider transition shadow-sm">
           <i data-lucide="message-circle" class="w-4 h-4"></i>
           <span>WhatsApp</span>
         </a>
 
         <!-- Mobile Menu Toggle Button -->
-        <button id="mobile-menu-btn" aria-label="Toggle Navigation Menu" class="lg:hidden p-2 text-charcoal hover:text-gold rounded-lg focus:outline-none">
+        <button id="mobile-menu-btn" aria-label="Toggle Menu" class="lg:hidden p-2 text-charcoal hover:text-gold rounded-lg focus:outline-none">
           <i id="hamburger-icon" data-lucide="menu" class="w-6 h-6"></i>
           <i id="close-icon" data-lucide="x" class="w-6 h-6 hidden"></i>
         </button>
@@ -145,21 +150,17 @@
     <!-- Mobile Drawer Navigation -->
     <div id="mobile-menu" class="hidden lg:hidden bg-ivory border-t border-charcoal/10 px-6 py-6 transition-all duration-300">
       <div class="flex flex-col space-y-4 text-base font-medium">
-        <a href="#home" class="mobile-nav-link text-primary hover:text-gold py-1">Home</a>
-        <a href="#collections" class="mobile-nav-link text-charcoal hover:text-gold py-1">Collections</a>
-        <a href="#products" class="mobile-nav-link text-charcoal hover:text-gold py-1">Trending Styles</a>
-        <a href="#about" class="mobile-nav-link text-charcoal hover:text-gold py-1">About Us</a>
-        <a href="#gallery" class="mobile-nav-link text-charcoal hover:text-gold py-1">Store Gallery</a>
-        <a href="#reviews" class="mobile-nav-link text-charcoal hover:text-gold py-1">Customer Reviews</a>
-        <a href="#store-info" class="mobile-nav-link text-charcoal hover:text-gold py-1">Store & Location</a>
-        <a href="#contact" class="mobile-nav-link text-charcoal hover:text-gold py-1">Contact & Enquiry</a>
-        <a href="#faq" class="mobile-nav-link text-charcoal hover:text-gold py-1">Store FAQs</a>
-        <div class="pt-4 border-t border-charcoal/10 flex flex-col gap-3">
-          <a href="https://wa.me/?text=Hello%20Kushwaha%20Bazar%2C%20I%20would%20like%20to%20enquire%20about%20your%20clothing%20collection." 
-             target="_blank" 
-             rel="noopener noreferrer" 
-             class="flex items-center justify-center gap-2 bg-[#25D366] text-white py-2.5 rounded-full text-sm font-semibold tracking-wide">
-            <i data-lucide="message-circle" class="w-4 h-4"></i> Enquire on WhatsApp
+        <a href="#home" class="mobile-nav-link text-primary hover:text-gold py-1" data-i18n="nav_home">होम</a>
+        <a href="#collections" class="mobile-nav-link text-charcoal hover:text-gold py-1" data-i18n="nav_collections">संग्रह (कलेक्शन)</a>
+        <a href="#products" class="mobile-nav-link text-charcoal hover:text-gold py-1" data-i18n="nav_trending">ट्रेंडिंग साड़ियां व परिधान</a>
+        <a href="#about" class="mobile-nav-link text-charcoal hover:text-gold py-1" data-i18n="nav_about">हमारे बारे में</a>
+        <a href="#gallery" class="mobile-nav-link text-charcoal hover:text-gold py-1" data-i18n="nav_gallery">गैलरी</a>
+        <a href="#reviews" class="mobile-nav-link text-charcoal hover:text-gold py-1" data-i18n="nav_reviews">ग्राहकों की राय</a>
+        <a href="#store-info" class="mobile-nav-link text-charcoal hover:text-gold py-1" data-i18n="nav_store">दुकान का पता</a>
+        <a href="#contact" class="mobile-nav-link text-charcoal hover:text-gold py-1" data-i18n="nav_contact">संपर्क करें</a>
+        <div class="pt-4 border-t border-charcoal/10">
+          <a href="https://wa.me/?text=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%20%E0%A4%95%E0%A5%81%E0%A4%B6%E0%A4%B5%E0%A4%BE%E0%A4%B9%E0%A4%BE%20%E0%A4%AC%E0%A4%BE%E0%A4%9C%E0%A4%BE%E0%A4%B0" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 bg-[#25D366] text-white py-2.5 rounded-full text-sm font-semibold tracking-wide">
+            <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp पर संपर्क करें
           </a>
         </div>
       </div>
@@ -169,131 +170,100 @@
   <!-- Hero Carousel Section -->
   <section id="home" class="relative w-full h-[650px] sm:h-[720px] lg:h-[780px] bg-primary overflow-hidden select-none" aria-label="Hero Carousel">
     
-    <!-- Slide 1 -->
-    <div class="hero-slide active absolute inset-0 w-full h-full flex items-center">
+    <!-- Slide 1: Banarasi & Bridal Sarees -->
+    <div class="hero-slide active absolute inset-0 w-full h-full flex items-center transition-opacity duration-700 opacity-100">
       <div class="absolute inset-0 overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1920&q=80" 
-             alt="Vibrant Fashion Display" 
-             class="hero-bg-zoom w-full h-full object-cover object-center brightness-75">
+        <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1920&q=80" 
+             alt="पारंपरिक बनारसी साड़ियां" 
+             class="w-full h-full object-cover object-center brightness-[0.72]">
       </div>
-      <div class="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/60 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/70 to-transparent"></div>
       <div class="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 z-10 w-full">
         <div class="max-w-2xl text-white space-y-5">
-          <span class="inline-block py-1 px-3 text-xs tracking-[0.25em] font-semibold uppercase bg-gold/30 text-gold-light border border-gold/40 rounded-full backdrop-blur-sm">
-            YOUR STYLE, YOUR IDENTITY
+          <span class="inline-block py-1 px-3 text-xs tracking-widest font-semibold uppercase bg-maroon/80 text-gold-light border border-gold/40 rounded-full" data-i18n="hero_badge_1">
+            शादी-ब्याह व शुभ अवसरों की खास पसंद
           </span>
-          <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] text-ivory">
-            Discover Your Perfect Style.
+          <h1 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] text-ivory" data-i18n="hero_h1_1">
+            शुद्ध बनारसी व कांजीवरम साड़ियों का अनूठा संग्रह
           </h1>
-          <p class="text-base sm:text-lg text-white/80 leading-relaxed font-light">
-            Explore a beautiful collection of fashion for every occasion at Kushwaha Bazar, Robertsganj. Quality clothing crafted for your everyday elegance.
+          <p class="text-base sm:text-lg text-white/90 leading-relaxed font-light" data-i18n="hero_p_1">
+            जरी वर्क, सिल्क, जॉर्जेट, बांधनी और उत्सवों के लिए विशेष साड़ियां — सीधे आपके अपने शहर राबर्ट्सगंज (सोनभद्र) में।
           </p>
           <div class="pt-4 flex flex-wrap gap-4">
-            <a href="#collections" class="bg-gold hover:bg-gold-dark text-white px-8 py-3.5 rounded-full text-sm font-semibold tracking-wider uppercase transition duration-300 shadow-lg hover:shadow-gold/20 flex items-center gap-2">
-              Explore Collections <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            <a href="#collections" class="bg-gold hover:bg-gold-dark text-primary px-8 py-3.5 rounded-full text-sm font-bold tracking-wider uppercase transition shadow-lg flex items-center gap-2" data-i18n="btn_explore">
+              कलेक्शन देखें <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
-            <a href="#store-info" class="border border-white/60 hover:border-gold hover:text-gold text-white px-8 py-3.5 rounded-full text-sm font-semibold tracking-wider uppercase transition duration-300 backdrop-blur-sm">
-              Visit Our Store
+            <a href="#store-info" class="border border-white/60 hover:border-gold hover:text-gold text-white px-8 py-3.5 rounded-full text-sm font-semibold tracking-wider uppercase transition backdrop-blur-sm" data-i18n="btn_visit">
+              दुकान पर पधारें
             </a>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Slide 2 -->
-    <div class="hero-slide absolute inset-0 w-full h-full flex items-center">
+    <!-- Slide 2: Bridal Lehengas & Ethnic Sets -->
+    <div class="hero-slide absolute inset-0 w-full h-full flex items-center transition-opacity duration-700 opacity-0 pointer-events-none">
       <div class="absolute inset-0 overflow-hidden">
         <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=1920&q=80" 
-             alt="Ethnic Indian Attire" 
-             class="hero-bg-zoom w-full h-full object-cover object-center brightness-75">
+             alt="दुल्हन लहंगा व सलवार सूट" 
+             class="w-full h-full object-cover object-center brightness-[0.70]">
       </div>
-      <div class="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/60 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/70 to-transparent"></div>
       <div class="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 z-10 w-full">
         <div class="max-w-2xl text-white space-y-5">
-          <span class="inline-block py-1 px-3 text-xs tracking-[0.25em] font-semibold uppercase bg-gold/30 text-gold-light border border-gold/40 rounded-full backdrop-blur-sm">
-            TIMELESS ETHNIC ELEGANCE
+          <span class="inline-block py-1 px-3 text-xs tracking-widest font-semibold uppercase bg-maroon/80 text-gold-light border border-gold/40 rounded-full" data-i18n="hero_badge_2">
+            त्योहारों व वैवाहिक आयोजनों के लिए
           </span>
-          <h2 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] text-ivory">
-            Style That Speaks for You.
+          <h2 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] text-ivory" data-i18n="hero_h1_2">
+            आकर्षक लहंगे, अनारकली व पार्टी वियर ड्रेसेस
           </h2>
-          <p class="text-base sm:text-lg text-white/80 leading-relaxed font-light">
-            Discover fashion that makes every moment special. Celebrate festivals, family gatherings, and everyday traditions in style.
+          <p class="text-base sm:text-lg text-white/90 leading-relaxed font-light" data-i18n="hero_p_2">
+            मनपसंद रंग, महीन कढ़ाई और बेहतरीन फैब्रिक में उपलब्ध महिलाओं के सभी फैशनेबल पारंपरिक परिधान।
           </p>
           <div class="pt-4 flex flex-wrap gap-4">
-            <a href="#products" class="bg-gold hover:bg-gold-dark text-white px-8 py-3.5 rounded-full text-sm font-semibold tracking-wider uppercase transition duration-300 shadow-lg flex items-center gap-2">
-              Explore Fashion <i data-lucide="sparkles" class="w-4 h-4"></i>
+            <a href="#products" class="bg-gold hover:bg-gold-dark text-primary px-8 py-3.5 rounded-full text-sm font-bold tracking-wider uppercase transition shadow-lg flex items-center gap-2" data-i18n="btn_view_designs">
+              डिजाइन देखें <i data-lucide="sparkles" class="w-4 h-4"></i>
             </a>
-            <a href="#contact" class="border border-white/60 hover:border-gold hover:text-gold text-white px-8 py-3.5 rounded-full text-sm font-semibold tracking-wider uppercase transition duration-300">
-              Get in Touch
+            <a href="#contact" class="border border-white/60 hover:border-gold hover:text-gold text-white px-8 py-3.5 rounded-full text-sm font-semibold tracking-wider uppercase transition" data-i18n="btn_contact">
+              पूछताछ करें
             </a>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Slide 3 -->
-    <div class="hero-slide absolute inset-0 w-full h-full flex items-center">
+    <!-- Slide 3: Kurta Pajama, Sherwani & Men's Traditional Wear -->
+    <div class="hero-slide absolute inset-0 w-full h-full flex items-center transition-opacity duration-700 opacity-0 pointer-events-none">
       <div class="absolute inset-0 overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1617127365659-c47fa864d8bc?auto=format&fit=crop&w=1920&q=80" 
-             alt="Contemporary Men and Women Apparel" 
-             class="hero-bg-zoom w-full h-full object-cover object-center brightness-75">
+        <img src="https://images.unsplash.com/photo-1597983073493-88cd35cf93b0?auto=format&fit=crop&w=1920&q=80" 
+             alt="कुर्ता पायजामा व पुरुषों के पारंपरिक वस्त्र" 
+             class="w-full h-full object-cover object-center brightness-[0.70]">
       </div>
-      <div class="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/60 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-primary/95 via-primary/70 to-transparent"></div>
       <div class="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 z-10 w-full">
         <div class="max-w-2xl text-white space-y-5">
-          <span class="inline-block py-1 px-3 text-xs tracking-[0.25em] font-semibold uppercase bg-gold/30 text-gold-light border border-gold/40 rounded-full backdrop-blur-sm">
-            ALL SEASONS & OCCASIONS
+          <span class="inline-block py-1 px-3 text-xs tracking-widest font-semibold uppercase bg-maroon/80 text-gold-light border border-gold/40 rounded-full" data-i18n="hero_badge_3">
+            मेंस ट्रेडिशनल व फॉर्मल वियर
           </span>
-          <h2 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] text-ivory">
-            Every Occasion. Every Style.
+          <h2 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] text-ivory" data-i18n="hero_h1_3">
+            कुर्ता-पायजामा, नेहरू जैकेट व शर्ट्स
           </h2>
-          <p class="text-base sm:text-lg text-white/80 leading-relaxed font-light">
-            Find your next favourite look at Kushwaha Bazar. From casual comfort to celebratory attire, we have you covered.
+          <p class="text-base sm:text-lg text-white/90 leading-relaxed font-light" data-i18n="hero_p_3">
+            पूजा-पाठ से लेकर शादी समारोहों तक—पुरुषों के लिए कॉटन कुर्ते, सिल्क कुर्ते और ट्रेंडी कैजुअल वियर।
           </p>
           <div class="pt-4 flex flex-wrap gap-4">
-            <a href="#collections" class="bg-gold hover:bg-gold-dark text-white px-8 py-3.5 rounded-full text-sm font-semibold tracking-wider uppercase transition duration-300 shadow-lg flex items-center gap-2">
-              Discover More <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            <a href="#collections" class="bg-gold hover:bg-gold-dark text-primary px-8 py-3.5 rounded-full text-sm font-bold tracking-wider uppercase transition shadow-lg flex items-center gap-2" data-i18n="btn_explore">
+              कलेक्शन देखें <i data-lucide="arrow-right" class="w-4 h-4"></i>
             </a>
-            <a href="#gallery" class="border border-white/60 hover:border-gold hover:text-gold text-white px-8 py-3.5 rounded-full text-sm font-semibold tracking-wider uppercase transition duration-300">
-              View Gallery
+            <a href="#gallery" class="border border-white/60 hover:border-gold hover:text-gold text-white px-8 py-3.5 rounded-full text-sm font-semibold tracking-wider uppercase transition" data-i18n="btn_gallery">
+              दुकान की तस्वीरें
             </a>
           </div>
         </div>
       </div>
     </div>
 
-    <!-- Slide 4 -->
-    <div class="hero-slide absolute inset-0 w-full h-full flex items-center">
-      <div class="absolute inset-0 overflow-hidden">
-        <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1920&q=80" 
-             alt="Store Experience" 
-             class="hero-bg-zoom w-full h-full object-cover object-center brightness-75">
-      </div>
-      <div class="absolute inset-0 bg-gradient-to-r from-primary/90 via-primary/60 to-transparent"></div>
-      <div class="relative max-w-7xl mx-auto px-6 sm:px-8 lg:px-12 z-10 w-full">
-        <div class="max-w-2xl text-white space-y-5">
-          <span class="inline-block py-1 px-3 text-xs tracking-[0.25em] font-semibold uppercase bg-gold/30 text-gold-light border border-gold/40 rounded-full backdrop-blur-sm">
-            ROBERTSGANJ, UTTAR PRADESH
-          </span>
-          <h2 class="font-serif text-4xl sm:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] text-ivory">
-            Your Local Fashion Destination.
-          </h2>
-          <p class="text-base sm:text-lg text-white/80 leading-relaxed font-light">
-            Great styles, a welcoming shopping experience, and fashion for your everyday moments right in Uttar Mohal, Robertsganj.
-          </p>
-          <div class="pt-4 flex flex-wrap gap-4">
-            <a href="#store-info" class="bg-gold hover:bg-gold-dark text-white px-8 py-3.5 rounded-full text-sm font-semibold tracking-wider uppercase transition duration-300 shadow-lg flex items-center gap-2">
-              Plan Your Visit <i data-lucide="map-pin" class="w-4 h-4"></i>
-            </a>
-            <a href="#reviews" class="border border-white/60 hover:border-gold hover:text-gold text-white px-8 py-3.5 rounded-full text-sm font-semibold tracking-wider uppercase transition duration-300">
-              Customer Reviews
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Carousel Arrow Navigators -->
+    <!-- Carousel Navigators -->
     <button id="hero-prev" aria-label="Previous Slide" class="absolute left-4 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full bg-black/40 hover:bg-gold text-white flex items-center justify-center transition border border-white/20 backdrop-blur-sm">
       <i data-lucide="chevron-left" class="w-6 h-6"></i>
     </button>
@@ -301,61 +271,56 @@
       <i data-lucide="chevron-right" class="w-6 h-6"></i>
     </button>
 
-    <!-- Carousel Pagination Indicators -->
+    <!-- Carousel Dots -->
     <div id="hero-dots" class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex space-x-2.5">
-      <button class="hero-dot w-3 h-3 rounded-full bg-gold transition-all duration-300 ring-2 ring-white/50" aria-label="Go to Slide 1" data-index="0"></button>
-      <button class="hero-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white/80 transition-all duration-300" aria-label="Go to Slide 2" data-index="1"></button>
-      <button class="hero-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white/80 transition-all duration-300" aria-label="Go to Slide 3" data-index="2"></button>
-      <button class="hero-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white/80 transition-all duration-300" aria-label="Go to Slide 4" data-index="3"></button>
+      <button class="hero-dot w-3 h-3 rounded-full bg-gold transition-all duration-300 ring-2 ring-white/50" aria-label="Slide 1" data-index="0"></button>
+      <button class="hero-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white/80 transition-all duration-300" aria-label="Slide 2" data-index="1"></button>
+      <button class="hero-dot w-3 h-3 rounded-full bg-white/40 hover:bg-white/80 transition-all duration-300" aria-label="Slide 3" data-index="2"></button>
     </div>
   </section>
 
-  <!-- Store Highlights / Verified Benefits Section -->
+  <!-- Store Highlights Section -->
   <section class="py-12 bg-white border-b border-charcoal/5 shadow-sm">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
         
-        <!-- Highlight 1 -->
-        <div class="flex items-center space-x-4 p-4 rounded-xl hover:bg-ivory/60 transition group">
-          <div class="w-14 h-14 rounded-full bg-gold/15 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-white transition duration-300 flex-shrink-0">
-            <i data-lucide="shirt" class="w-7 h-7"></i>
+        <div class="flex items-center space-x-4 p-4 rounded-xl hover:bg-ivory/80 transition group">
+          <div class="w-14 h-14 rounded-full bg-gold/15 flex items-center justify-center text-maroon group-hover:bg-gold group-hover:text-white transition duration-300 flex-shrink-0">
+            <i data-lucide="sparkles" class="w-7 h-7"></i>
           </div>
           <div>
-            <h3 class="font-serif text-base font-bold text-primary">Fashion for Every Occasion</h3>
-            <p class="text-xs text-muted mt-0.5 leading-relaxed">Ethnic, festive, and comfortable everyday wear.</p>
+            <h3 class="font-serif text-base font-bold text-primary" data-i18n="feat_1_title">शुद्ध साड़ियों की विशाल रेंज</h3>
+            <p class="text-xs text-muted mt-0.5" data-i18n="feat_1_desc">बनारसी, सिल्क, चंदेरी, कॉटन व प्रिंटेड साड़ियां।</p>
           </div>
         </div>
 
-        <!-- Highlight 2 -->
-        <div class="flex items-center space-x-4 p-4 rounded-xl hover:bg-ivory/60 transition group">
-          <div class="w-14 h-14 rounded-full bg-gold/15 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-white transition duration-300 flex-shrink-0">
-            <i data-lucide="smile" class="w-7 h-7"></i>
+        <div class="flex items-center space-x-4 p-4 rounded-xl hover:bg-ivory/80 transition group">
+          <div class="w-14 h-14 rounded-full bg-gold/15 flex items-center justify-center text-maroon group-hover:bg-gold group-hover:text-white transition duration-300 flex-shrink-0">
+            <i data-lucide="gem" class="w-7 h-7"></i>
           </div>
           <div>
-            <h3 class="font-serif text-base font-bold text-primary">Friendly Shopping Experience</h3>
-            <p class="text-xs text-muted mt-0.5 leading-relaxed">Attentive staff assisting you with warm hospitality.</p>
+            <h3 class="font-serif text-base font-bold text-primary" data-i18n="feat_2_title">शादी व लगन स्पेशल वैरायटी</h3>
+            <p class="text-xs text-muted mt-0.5" data-i18n="feat_2_desc">दुल्हन के जोड़े, लहंगे व परिवार के लिए कपड़े।</p>
           </div>
         </div>
 
-        <!-- Highlight 3 -->
-        <div class="flex items-center space-x-4 p-4 rounded-xl hover:bg-ivory/60 transition group">
-          <div class="w-14 h-14 rounded-full bg-gold/15 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-white transition duration-300 flex-shrink-0">
+        <div class="flex items-center space-x-4 p-4 rounded-xl hover:bg-ivory/80 transition group">
+          <div class="w-14 h-14 rounded-full bg-gold/15 flex items-center justify-center text-maroon group-hover:bg-gold group-hover:text-white transition duration-300 flex-shrink-0">
             <i data-lucide="map-pin" class="w-7 h-7"></i>
           </div>
           <div>
-            <h3 class="font-serif text-base font-bold text-primary">Visit Us in Robertsganj</h3>
-            <p class="text-xs text-muted mt-0.5 leading-relaxed">Conveniently located at Uttar Mohal, Robertsganj.</p>
+            <h3 class="font-serif text-base font-bold text-primary" data-i18n="feat_3_title">राबर्ट्सगंज का मुख्य बाजार</h3>
+            <p class="text-xs text-muted mt-0.5" data-i18n="feat_3_desc">उत्तर मोहाल में स्थित, सहज व सुविधाजनक पहुंच।</p>
           </div>
         </div>
 
-        <!-- Highlight 4 -->
-        <div class="flex items-center space-x-4 p-4 rounded-xl hover:bg-ivory/60 transition group">
-          <div class="w-14 h-14 rounded-full bg-gold/15 flex items-center justify-center text-gold group-hover:bg-gold group-hover:text-white transition duration-300 flex-shrink-0">
-            <i data-lucide="shopping-bag" class="w-7 h-7"></i>
+        <div class="flex items-center space-x-4 p-4 rounded-xl hover:bg-ivory/80 transition group">
+          <div class="w-14 h-14 rounded-full bg-gold/15 flex items-center justify-center text-maroon group-hover:bg-gold group-hover:text-white transition duration-300 flex-shrink-0">
+            <i data-lucide="badge-check" class="w-7 h-7"></i>
           </div>
           <div>
-            <h3 class="font-serif text-base font-bold text-primary">In-Store Shopping Available</h3>
-            <p class="text-xs text-muted mt-0.5 leading-relaxed">Try on styles in person 7 days a week.</p>
+            <h3 class="font-serif text-base font-bold text-primary" data-i18n="feat_4_title">उचित मूल्य व खरा कपड़ा</h3>
+            <p class="text-xs text-muted mt-0.5" data-i18n="feat_4_desc">विश्वास और सही दाम—वर्षों का पारिवारिक भरोसा।</p>
           </div>
         </div>
 
@@ -363,149 +328,147 @@
     </div>
   </section>
 
-  <!-- Shop by Collection Section -->
+  <!-- Shop by Category / Collections -->
   <section id="collections" class="py-20 bg-ivory">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Section Header -->
       <div class="text-center max-w-2xl mx-auto mb-14">
-        <span class="text-xs font-semibold tracking-[0.2em] text-gold uppercase">Proposed Curations</span>
-        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mt-2">Find Your Style</h2>
+        <span class="text-xs font-semibold tracking-[0.2em] text-maroon uppercase" data-i18n="col_tag">कपड़ों की श्रेणियां</span>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mt-2" data-i18n="col_heading">हमारे प्रमुख वस्त्र संग्रह</h2>
         <div class="w-16 h-0.5 bg-gold mx-auto my-3"></div>
-        <p class="text-sm sm:text-base text-muted">Explore fashion for every mood and occasion at Kushwaha Bazar.</p>
+        <p class="text-sm sm:text-base text-muted" data-i18n="col_sub">हर उम्र और अवसर के लिए उत्कृष्ट परिधानों का चयन</p>
       </div>
 
-      <!-- 6 Configurable Collection Cards -->
+      <!-- 6 Local Boutique Categories with Realistic Saree & Traditional Images -->
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         
-        <!-- Collection 1: Men's Fashion -->
-        <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 bg-white border border-charcoal/5">
-          <div class="aspect-[4/5] overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=800&q=80" 
-                 alt="Men's Fashion Collection" 
-                 class="w-full h-full object-cover object-top transition duration-700 group-hover:scale-105">
-          </div>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent flex flex-col justify-end p-6 text-white">
-            <span class="text-xs uppercase tracking-widest text-gold font-medium mb-1">Collection</span>
-            <h3 class="font-serif text-2xl font-bold">Men's Fashion</h3>
-            <p class="text-xs text-white/80 mt-1 line-clamp-2">Crisp shirts, traditional kurtas, trousers, and refined everyday wear.</p>
-            <a href="#products" onclick="filterCategory('mens')" class="mt-4 inline-flex items-center text-xs font-semibold uppercase tracking-wider text-gold hover:text-white transition">
-              Explore Collection <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Collection 2: Women's Fashion -->
-        <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 bg-white border border-charcoal/5">
-          <div class="aspect-[4/5] overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=800&q=80" 
-                 alt="Women's Fashion Collection" 
-                 class="w-full h-full object-cover object-top transition duration-700 group-hover:scale-105">
-          </div>
-          <div class="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent flex flex-col justify-end p-6 text-white">
-            <span class="text-xs uppercase tracking-widest text-gold font-medium mb-1">Collection</span>
-            <h3 class="font-serif text-2xl font-bold">Women's Fashion</h3>
-            <p class="text-xs text-white/80 mt-1 line-clamp-2">Graceful dresses, contemporary suits, sets, and versatile daily apparel.</p>
-            <a href="#products" onclick="filterCategory('womens')" class="mt-4 inline-flex items-center text-xs font-semibold uppercase tracking-wider text-gold hover:text-white transition">
-              Explore Collection <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Collection 3: Ethnic Wear -->
-        <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 bg-white border border-charcoal/5">
+        <!-- Category 1: Sarees -->
+        <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 bg-white border border-charcoal/10">
           <div class="aspect-[4/5] overflow-hidden">
             <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80" 
-                 alt="Ethnic Wear Collection" 
+                 alt="बनारसी व सिल्क साड़ी संग्रह" 
                  class="w-full h-full object-cover object-top transition duration-700 group-hover:scale-105">
           </div>
           <div class="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent flex flex-col justify-end p-6 text-white">
-            <span class="text-xs uppercase tracking-widest text-gold font-medium mb-1">Collection</span>
-            <h3 class="font-serif text-2xl font-bold">Ethnic Wear</h3>
-            <p class="text-xs text-white/80 mt-1 line-clamp-2">Timeless Indian outfits, regal silhouettes, and delicate embroidery.</p>
-            <a href="#products" onclick="filterCategory('ethnic')" class="mt-4 inline-flex items-center text-xs font-semibold uppercase tracking-wider text-gold hover:text-white transition">
-              Explore Collection <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
+            <span class="text-xs uppercase tracking-widest text-gold font-medium mb-1" data-i18n="cat_tag_1">सदाबहार सौंदर्य</span>
+            <h3 class="font-serif text-2xl font-bold" data-i18n="cat_title_1">साड़ी संसार (Saree Collection)</h3>
+            <p class="text-xs text-white/80 mt-1 line-clamp-2" data-i18n="cat_desc_1">बनारसी कतान, कांजीवरम स्टाइल, जॉर्जेट, शिफॉन और डेली वियर कॉटन साड़ियां।</p>
+            <a href="#products" onclick="filterCategory('sarees')" class="mt-4 inline-flex items-center text-xs font-semibold uppercase tracking-wider text-gold hover:text-white transition">
+              <span data-i18n="cat_btn">साड़ियां देखें</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
             </a>
           </div>
         </div>
 
-        <!-- Collection 4: Casual Wear -->
-        <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 bg-white border border-charcoal/5">
+        <!-- Category 2: Bridal & Festive Lehengas -->
+        <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 bg-white border border-charcoal/10">
           <div class="aspect-[4/5] overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=800&q=80" 
-                 alt="Casual Wear Collection" 
-                 class="w-full h-full object-cover object-center transition duration-700 group-hover:scale-105">
+            <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=800&q=80" 
+                 alt="दुल्हन लहंगा व चोली" 
+                 class="w-full h-full object-cover object-top transition duration-700 group-hover:scale-105">
           </div>
           <div class="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent flex flex-col justify-end p-6 text-white">
-            <span class="text-xs uppercase tracking-widest text-gold font-medium mb-1">Collection</span>
-            <h3 class="font-serif text-2xl font-bold">Casual Wear</h3>
-            <p class="text-xs text-white/80 mt-1 line-clamp-2">Laid-back t-shirts, tops, breathable cottons, and relaxed fits.</p>
-            <a href="#products" onclick="filterCategory('casual')" class="mt-4 inline-flex items-center text-xs font-semibold uppercase tracking-wider text-gold hover:text-white transition">
-              Explore Collection <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
+            <span class="text-xs uppercase tracking-widest text-gold font-medium mb-1" data-i18n="cat_tag_2">शुभ विवाह</span>
+            <h3 class="font-serif text-2xl font-bold" data-i18n="cat_title_2">दुल्हन लहंगा व चोली (Bridal Wear)</h3>
+            <p class="text-xs text-white/80 mt-1 line-clamp-2" data-i18n="cat_desc_2">शाही जरी और गोटा-पत्ती वर्क के साथ डिजाइनर लहंगे व पार्टी-वियर गाउन।</p>
+            <a href="#products" onclick="filterCategory('lehenga')" class="mt-4 inline-flex items-center text-xs font-semibold uppercase tracking-wider text-gold hover:text-white transition">
+              <span data-i18n="cat_btn">लहंगे देखें</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
             </a>
           </div>
         </div>
 
-        <!-- Collection 5: Festive Collection -->
-        <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 bg-white border border-charcoal/5">
+        <!-- Category 3: Salwar Suits & Kurtis -->
+        <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 bg-white border border-charcoal/10">
           <div class="aspect-[4/5] overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&w=800&q=80" 
-                 alt="Festive Collection" 
-                 class="w-full h-full object-cover object-center transition duration-700 group-hover:scale-105">
+            <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=800&q=80" 
+                 alt="सलवार सूट व कुर्ती" 
+                 class="w-full h-full object-cover object-top transition duration-700 group-hover:scale-105">
           </div>
           <div class="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent flex flex-col justify-end p-6 text-white">
-            <span class="text-xs uppercase tracking-widest text-gold font-medium mb-1">Collection</span>
-            <h3 class="font-serif text-2xl font-bold">Festive Collection</h3>
-            <p class="text-xs text-white/80 mt-1 line-clamp-2">Lustrous fabrics, festive motifs, and celebratory attire for family functions.</p>
-            <a href="#products" onclick="filterCategory('ethnic')" class="mt-4 inline-flex items-center text-xs font-semibold uppercase tracking-wider text-gold hover:text-white transition">
-              Explore Collection <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
+            <span class="text-xs uppercase tracking-widest text-gold font-medium mb-1" data-i18n="cat_tag_3">दैनिक व उत्सव</span>
+            <h3 class="font-serif text-2xl font-bold" data-i18n="cat_title_3">सलवार सूट व कुर्ती (Suits & Kurtis)</h3>
+            <p class="text-xs text-white/80 mt-1 line-clamp-2" data-i18n="cat_desc_3">अनारकली, पटियाला सूट, प्लाजो सेट और आरामदेह रेडीमेड कुर्तियां।</p>
+            <a href="#products" onclick="filterCategory('womens')" class="mt-4 inline-flex items-center text-xs font-semibold uppercase tracking-wider text-gold hover:text-white transition">
+              <span data-i18n="cat_btn">सूट्स देखें</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
             </a>
           </div>
         </div>
 
-        <!-- Collection 6: Everyday Essentials -->
-        <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 bg-white border border-charcoal/5">
+        <!-- Category 4: Men's Kurtas & Sherwani -->
+        <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 bg-white border border-charcoal/10">
           <div class="aspect-[4/5] overflow-hidden">
-            <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=800&q=80" 
-                 alt="Everyday Essentials Collection" 
-                 class="w-full h-full object-cover object-center transition duration-700 group-hover:scale-105">
+            <img src="https://images.unsplash.com/photo-1597983073493-88cd35cf93b0?auto=format&fit=crop&w=800&q=80" 
+                 alt="कुर्ता पायजामा व शेरवानी" 
+                 class="w-full h-full object-cover object-top transition duration-700 group-hover:scale-105">
           </div>
           <div class="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent flex flex-col justify-end p-6 text-white">
-            <span class="text-xs uppercase tracking-widest text-gold font-medium mb-1">Collection</span>
-            <h3 class="font-serif text-2xl font-bold">Everyday Essentials</h3>
-            <p class="text-xs text-white/80 mt-1 line-clamp-2">Reliable, comfortable wardrobe staples designed for long-lasting daily utility.</p>
-            <a href="#products" onclick="filterCategory('casual')" class="mt-4 inline-flex items-center text-xs font-semibold uppercase tracking-wider text-gold hover:text-white transition">
-              Explore Collection <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
+            <span class="text-xs uppercase tracking-widest text-gold font-medium mb-1" data-i18n="cat_tag_4">पुरुषों की शान</span>
+            <h3 class="font-serif text-2xl font-bold" data-i18n="cat_title_4">कुर्ता-पायजामा व शेरवानी (Men's Ethnic)</h3>
+            <p class="text-xs text-white/80 mt-1 line-clamp-2" data-i18n="cat_desc_4">त्योहारों और शादियों के लिए कढ़े हुए कुर्ते, बंडी/मोदी जैकेट और धोती सेट।</p>
+            <a href="#products" onclick="filterCategory('mens')" class="mt-4 inline-flex items-center text-xs font-semibold uppercase tracking-wider text-gold hover:text-white transition">
+              <span data-i18n="cat_btn">कुर्ते देखें</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Category 5: Men's Shirts & Trousers -->
+        <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 bg-white border border-charcoal/10">
+          <div class="aspect-[4/5] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=80" 
+                 alt="शर्ट्स, पैंट व जींस" 
+                 class="w-full h-full object-cover object-top transition duration-700 group-hover:scale-105">
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent flex flex-col justify-end p-6 text-white">
+            <span class="text-xs uppercase tracking-widest text-gold font-medium mb-1" data-i18n="cat_tag_5">कैजुअल व फॉर्मल</span>
+            <h3 class="font-serif text-2xl font-bold" data-i18n="cat_title_5">शर्ट, पैंट व जींस (Shirts & Trousers)</h3>
+            <p class="text-xs text-white/80 mt-1 line-clamp-2" data-i18n="cat_desc_5">ऑफिस, कॉलेज व रोजमर्रा के लिए ब्रांडेड स्टाइल की शर्ट्स व टिकाऊ ट्राउजर।</p>
+            <a href="#products" onclick="filterCategory('mens')" class="mt-4 inline-flex items-center text-xs font-semibold uppercase tracking-wider text-gold hover:text-white transition">
+              <span data-i18n="cat_btn">शर्ट्स देखें</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Category 6: Kids & Family Festivities -->
+        <div class="group relative rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-500 bg-white border border-charcoal/10">
+          <div class="aspect-[4/5] overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1544717305-2782549b5136?auto=format&fit=crop&w=800&q=80" 
+                 alt="बच्चों व परिवार के कपड़े" 
+                 class="w-full h-full object-cover object-top transition duration-700 group-hover:scale-105">
+          </div>
+          <div class="absolute inset-0 bg-gradient-to-t from-primary/95 via-primary/40 to-transparent flex flex-col justify-end p-6 text-white">
+            <span class="text-xs uppercase tracking-widest text-gold font-medium mb-1" data-i18n="cat_tag_6">पूरे परिवार के लिए</span>
+            <h3 class="font-serif text-2xl font-bold" data-i18n="cat_title_6">किड्स व फैमिली वियर (Kids & Family)</h3>
+            <p class="text-xs text-white/80 mt-1 line-clamp-2" data-i18n="cat_desc_6">बच्चों के त्योहारों के कपड़े, फ्रॉक, कुर्ता-धोती व गिफ्टिंग परिधान।</p>
+            <a href="#products" onclick="filterCategory('all')" class="mt-4 inline-flex items-center text-xs font-semibold uppercase tracking-wider text-gold hover:text-white transition">
+              <span data-i18n="cat_btn">सभी देखें</span> <i data-lucide="arrow-right" class="w-3.5 h-3.5 ml-1"></i>
             </a>
           </div>
         </div>
 
       </div>
 
-      <!-- Configurable Note -->
-      <p class="text-center text-xs text-muted/80 mt-6 italic">
-        * Category cards showcase proposed fashion curations for illustration. Visit our Robertsganj store to view active stock.
+      <p class="text-center text-xs text-muted mt-6 italic" data-i18n="col_disclaimer">
+        * नई डिजाइन और ताज़ा स्टॉक देखने के लिए उत्तर मोहाल, राबर्ट्सगंज स्थित हमारी दुकान पर जरूर पधारें।
       </p>
 
     </div>
   </section>
 
-  <!-- Featured Products / Trending Styles Section -->
-  <section id="products" class="py-20 bg-white border-y border-charcoal/5">
+  <!-- Featured Products / Trending Saree & Ethnic Showcase -->
+  <section id="products" class="py-20 bg-white border-y border-charcoal/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Section Title & Search Bar -->
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 gap-6">
         <div>
-          <span class="text-xs font-semibold tracking-[0.2em] text-gold uppercase">In-Store Highlights</span>
-          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mt-1">Trending Styles</h2>
-          <p class="text-sm text-muted mt-2">Sample catalog showcase. Inquire on WhatsApp or visit our store in Robertsganj.</p>
+          <span class="text-xs font-semibold tracking-[0.2em] text-maroon uppercase" data-i18n="prod_tag">दुकान की खास पेशकश</span>
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mt-1" data-i18n="prod_heading">लोकप्रिय साड़ियां व कपड़े</h2>
+          <p class="text-sm text-muted mt-2" data-i18n="prod_sub">पसंद करें, विशलिस्ट में जोड़ें या सीधे WhatsApp पर रेट व फोटो मंगाएं।</p>
         </div>
 
         <!-- Search Input Bar -->
         <div class="w-full md:w-80 relative">
-          <input type="text" id="product-search-input" placeholder="Search styles (e.g. Kurta, Suit, Denim)..." 
-                 class="w-full pl-10 pr-4 py-2.5 rounded-full border border-charcoal/20 bg-ivory/50 focus:outline-none focus:border-gold text-xs">
+          <input type="text" id="product-search-input" placeholder="साड़ी, लहंगा या कुर्ता खोजें..." 
+                 class="w-full pl-10 pr-4 py-2.5 rounded-full border border-charcoal/20 bg-ivory/60 focus:outline-none focus:border-gold text-xs">
           <i data-lucide="search" class="w-4 h-4 absolute left-3.5 top-3 text-muted"></i>
           <button id="clear-search-btn" class="hidden absolute right-3 top-2.5 text-xs text-muted hover:text-primary">✕</button>
         </div>
@@ -513,77 +476,75 @@
 
       <!-- Category Filter Tabs -->
       <div class="flex flex-wrap items-center gap-2 mb-10 border-b border-charcoal/10 pb-4">
-        <button class="cat-btn active px-5 py-2 rounded-full text-xs font-semibold tracking-wider transition bg-primary text-white" data-cat="all">All Styles</button>
-        <button class="cat-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider transition bg-ivory text-charcoal hover:bg-gold/20" data-cat="mens">Men's Fashion</button>
-        <button class="cat-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider transition bg-ivory text-charcoal hover:bg-gold/20" data-cat="womens">Women's Fashion</button>
-        <button class="cat-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider transition bg-ivory text-charcoal hover:bg-gold/20" data-cat="ethnic">Ethnic Wear</button>
-        <button class="cat-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider transition bg-ivory text-charcoal hover:bg-gold/20" data-cat="casual">Casual Wear</button>
+        <button class="cat-btn active px-5 py-2 rounded-full text-xs font-semibold tracking-wider transition bg-primary text-white" data-cat="all" data-i18n="filter_all">सभी कपड़े (All)</button>
+        <button class="cat-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider transition bg-ivory text-charcoal hover:bg-gold/20" data-cat="sarees" data-i18n="filter_sarees">साड़ियां (Sarees)</button>
+        <button class="cat-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider transition bg-ivory text-charcoal hover:bg-gold/20" data-cat="lehenga" data-i18n="filter_lehenga">लहंगे व ब्राइडल</button>
+        <button class="cat-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider transition bg-ivory text-charcoal hover:bg-gold/20" data-cat="womens" data-i18n="filter_suits">सूट्स व कुर्तियां</button>
+        <button class="cat-btn px-5 py-2 rounded-full text-xs font-semibold tracking-wider transition bg-ivory text-charcoal hover:bg-gold/20" data-cat="mens" data-i18n="filter_mens">मेंस कुर्ता व वियर</button>
       </div>
 
-      <!-- Products Grid (Dynamically Populated by Vanilla JS) -->
+      <!-- Products Grid -->
       <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-        <!-- JS Injects Product Cards Here -->
+        <!-- Injected via JavaScript with authentic local images -->
       </div>
 
-      <!-- Empty Search Fallback State -->
+      <!-- Empty Fallback -->
       <div id="empty-products" class="hidden py-16 text-center">
         <div class="w-16 h-16 bg-gold/15 text-gold rounded-full flex items-center justify-center mx-auto mb-4">
           <i data-lucide="search-x" class="w-8 h-8"></i>
         </div>
-        <h4 class="font-serif text-xl font-bold text-primary">No Matching Styles Found</h4>
-        <p class="text-sm text-muted mt-1 max-w-md mx-auto">We couldn't find any products matching your search query. Try clearing the filter or contact us on WhatsApp.</p>
-        <button id="reset-filter-btn" class="mt-4 px-6 py-2 bg-gold hover:bg-gold-dark text-white text-xs font-semibold tracking-wider uppercase rounded-full transition">Reset Filter</button>
+        <h4 class="font-serif text-xl font-bold text-primary" data-i18n="empty_title">कोई परिधान नहीं मिला</h4>
+        <p class="text-sm text-muted mt-1 max-w-md mx-auto" data-i18n="empty_desc">कृपया दूसरा शब्द खोजें अथवा WhatsApp पर सीधे अपनी पसंद बताएं।</p>
+        <button id="reset-filter-btn" class="mt-4 px-6 py-2 bg-gold hover:bg-gold-dark text-white text-xs font-semibold tracking-wider uppercase rounded-full transition" data-i18n="empty_btn">फ़िल्टर हटाएं</button>
       </div>
 
-      <!-- Catalog Disclaimer -->
-      <div class="mt-8 p-4 rounded-xl bg-ivory border border-gold/20 text-center text-xs text-muted">
-        <span class="font-semibold text-primary">Note for Shoppers:</span> Prices & items displayed above are illustrative demo samples. Please visit Kushwaha Bazar in Uttar Mohal, Robertsganj or click <strong>WhatsApp Enquiry</strong> to verify real-time price & available sizes.
+      <div class="mt-8 p-4 rounded-xl bg-ivory border border-gold/30 text-center text-xs text-muted">
+        <span class="font-bold text-primary" data-i18n="note_bold">ग्राहकों के लिए सूचना:</span> <span data-i18n="note_text">वेबसाइट पर दिखाए गए कपड़े व अनुमानित मूल्य उदाहरण हेतु हैं। असली फैब्रिक देखने, ट्रायल करने व विशेष छूट के लिए उत्तर मोहाल, राबर्ट्सगंज दुकान पर आएं या WhatsApp बटन दबाएं।</span>
       </div>
 
     </div>
   </section>
 
-  <!-- About Us / Brand Story Section -->
+  <!-- About Us Section -->
   <section id="about" class="py-20 bg-ivory">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
         
-        <!-- Left Image Column with Visual Framing -->
+        <!-- Left Image Column -->
         <div class="lg:col-span-5 relative">
-          <div class="relative rounded-2xl overflow-hidden shadow-2xl">
-            <img src="https://images.unsplash.com/photo-1441984904996-e0b6ba687e04?auto=format&fit=crop&w=1000&q=80" 
-                 alt="Kushwaha Bazar Store Atmosphere" 
+          <div class="relative rounded-2xl overflow-hidden shadow-2xl border border-charcoal/10">
+            <img src="kus.jpg" 
+                 alt="कुशवाहा बाजार की साड़ियां व दुकान" 
                  class="w-full h-[480px] object-cover">
             <div class="absolute inset-0 bg-primary/10"></div>
           </div>
-          <!-- Decorative Stamp Badge -->
-          <div class="absolute -bottom-6 -right-6 bg-primary text-white p-5 rounded-2xl shadow-xl hidden sm:flex flex-col items-center justify-center border-2 border-gold max-w-[170px] text-center">
+          <div class="absolute -bottom-6 -right-6 bg-primary text-white p-5 rounded-2xl shadow-xl hidden sm:flex flex-col items-center justify-center border-2 border-gold max-w-[190px] text-center">
             <i data-lucide="award" class="w-6 h-6 text-gold mb-1"></i>
             <span class="text-xs uppercase tracking-widest text-gold font-bold">Robertsganj</span>
-            <span class="text-[11px] text-white/80 mt-0.5">Fashion Destination</span>
+            <span class="text-[11px] text-white/90 mt-0.5" data-i18n="badge_local">कपड़ों की विश्वसनीय दुकान</span>
           </div>
         </div>
 
         <!-- Right Editorial Column -->
         <div class="lg:col-span-7 space-y-6">
-          <div class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] text-gold uppercase">
+          <div class="inline-flex items-center gap-2 text-xs font-semibold tracking-[0.2em] text-maroon uppercase">
             <i data-lucide="sparkles" class="w-4 h-4"></i>
-            <span>Our Store Story</span>
+            <span data-i18n="about_tag">हमारी परंपरा एवं सेवा</span>
           </div>
 
-          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-primary leading-tight">
-            A Local Destination for Your Style.
+          <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-primary leading-tight" data-i18n="about_heading">
+            राबर्ट्सगंज का अपना पारिवारिक कपड़ों का प्रतिष्ठान
           </h2>
 
           <div class="space-y-4 text-charcoal/80 text-sm sm:text-base leading-relaxed">
-            <p>
-              Located in the heart of <strong>Uttar Mohal, Robertsganj, Uttar Pradesh (231216)</strong>, Kushwaha Bazar (कुशवाहा बाजार) is dedicated to bringing quality, versatile, and stylish clothing options to our local community.
+            <p data-i18n="about_p1">
+              <strong>उत्तर मोहाल, राबर्ट्सगंज (सोनभद्र, उ.प्र. 231216)</strong> में स्थित <strong>कुशवाहा बाजार (Kushwaha Bazar)</strong> क्षेत्र के परिवारों को आकर्षक, टिकाऊ और उचित मूल्य के वस्त्र उपलब्ध कराने के लिए सदैव समर्पित है।
             </p>
-            <p>
-              Whether you are looking for timeless ethnic wear for family celebrations, comfortable casuals for daily life, or celebratory attire, we welcome every visitor with personalized attention and an inviting shopping atmosphere.
+            <p data-i18n="about_p2">
+              चाहे शादी-ब्याह का लगन हो, छठ, दिवाली, होली, ईद जैसे पावन पर्व हों, या रोजमर्रा में पहनने वाले आरामदायक सूती कपड़े — हम हर ग्राहक का स्वागत अपनेपन और मुस्कान के साथ करते हैं।
             </p>
-            <p>
-              We believe in honest customer relationships, attentive service, and an enjoyable hands-on in-store shopping experience where you can browse fabrics, try on your selections, and discover your next favourite look.
+            <p data-i18n="about_p3">
+              हमारे यहां कपड़े का स्पर्श कर, थान व जरी की बारीकी देखकर और तसल्ली से पसंद करने की पूरी सुविधा उपलब्ध है।
             </p>
           </div>
 
@@ -592,25 +553,25 @@
             <div class="flex items-start gap-3">
               <i data-lucide="check-circle" class="w-5 h-5 text-gold flex-shrink-0 mt-0.5"></i>
               <div>
-                <h4 class="font-serif text-sm font-bold text-primary">In-Person Experience</h4>
-                <p class="text-xs text-muted">Touch the fabric & try fits before buying.</p>
+                <h4 class="font-serif text-sm font-bold text-primary" data-i18n="pillar_1_t">दुकान पर तसल्ली से खरीदारी</h4>
+                <p class="text-xs text-muted" data-i18n="pillar_1_d">कपड़ा छूकर देखें और मनपसंद रंग चुनें।</p>
               </div>
             </div>
             <div class="flex items-start gap-3">
               <i data-lucide="check-circle" class="w-5 h-5 text-gold flex-shrink-0 mt-0.5"></i>
               <div>
-                <h4 class="font-serif text-sm font-bold text-primary">Personal Interaction</h4>
-                <p class="text-xs text-muted">Warm, attentive staff ready to help you.</p>
+                <h4 class="font-serif text-sm font-bold text-primary" data-i18n="pillar_2_t">सदा सहयोगी व्यवहार</h4>
+                <p class="text-xs text-muted" data-i18n="pillar_2_d">हर पसंद और बजट के अनुसार सही सुझाव।</p>
               </div>
             </div>
           </div>
 
           <div class="pt-4 flex flex-wrap gap-4">
-            <a href="#gallery" class="bg-primary hover:bg-gold text-white px-7 py-3 rounded-full text-xs font-semibold tracking-wider uppercase transition duration-300 flex items-center gap-2">
-              Discover Our Store Gallery <i data-lucide="camera" class="w-4 h-4"></i>
+            <a href="#gallery" class="bg-primary hover:bg-gold text-white px-7 py-3 rounded-full text-xs font-semibold tracking-wider uppercase transition flex items-center gap-2" data-i18n="btn_view_photos">
+              गैलरी में साड़ियां देखें <i data-lucide="camera" class="w-4 h-4"></i>
             </a>
-            <a href="#store-info" class="border border-charcoal/30 hover:border-gold hover:text-gold text-primary px-7 py-3 rounded-full text-xs font-semibold tracking-wider uppercase transition duration-300">
-              Get Store Directions
+            <a href="#store-info" class="border border-charcoal/30 hover:border-gold hover:text-gold text-primary px-7 py-3 rounded-full text-xs font-semibold tracking-wider uppercase transition" data-i18n="btn_get_directions">
+              दुकान का रास्ता देखें
             </a>
           </div>
 
@@ -620,105 +581,92 @@
     </div>
   </section>
 
-  <!-- Visual Gallery Section -->
+  <!-- Visual Saree & Store Gallery Section -->
   <section id="gallery" class="py-20 bg-white border-b border-charcoal/5">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Section Header -->
       <div class="text-center max-w-2xl mx-auto mb-14">
-        <span class="text-xs font-semibold tracking-[0.2em] text-gold uppercase">Visual Showcase</span>
-        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mt-2">Fashion & Store Gallery</h2>
+        <span class="text-xs font-semibold tracking-[0.2em] text-maroon uppercase" data-i18n="gal_tag">चित्र दीर्घा</span>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mt-2" data-i18n="gal_heading">साड़ियां व स्टोर गैलरी</h2>
         <div class="w-16 h-0.5 bg-gold mx-auto my-3"></div>
-        <p class="text-sm text-muted">A glimpse into our clothing displays, textures, and boutique aesthetic.</p>
+        <p class="text-sm text-muted" data-i18n="gal_sub">हमारे संग्रह की एक सुंदर झलक — बड़ा देखने के लिए किसी भी फोटो पर क्लिक करें।</p>
       </div>
 
-      <!-- Gallery Grid -->
+      <!-- 8 Real Indian Traditional Clothing & Saree Gallery Items -->
       <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4" id="gallery-grid">
         
-        <!-- Gallery Item 1 -->
-        <div class="gallery-item group relative h-64 rounded-xl overflow-hidden cursor-pointer bg-charcoal/5" data-index="0" data-src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1400&q=80" data-title="Store Interior & Display Racks">
-          <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=600&q=80" alt="Store Interior Display" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+        <div class="gallery-item group relative h-64 rounded-xl overflow-hidden cursor-pointer bg-charcoal/5" data-index="0" data-src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1400&q=80" data-title="शाही लाल बनारसी सिल्क साड़ी (Bridal Red Banarasi)">
+          <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=600&q=80" alt="लाल बनारसी साड़ी" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
           <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center p-4 text-center">
-            <span class="text-white text-xs font-medium tracking-wide flex items-center gap-1.5"><i data-lucide="maximize-2" class="w-4 h-4 text-gold"></i> View Photo</span>
+            <span class="text-white text-xs font-medium tracking-wide flex items-center gap-1.5"><i data-lucide="maximize-2" class="w-4 h-4 text-gold"></i> <span data-i18n="view_photo">बड़ा देखें</span></span>
           </div>
         </div>
 
-        <!-- Gallery Item 2 -->
-        <div class="gallery-item group relative h-64 rounded-xl overflow-hidden cursor-pointer bg-charcoal/5" data-index="1" data-src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1400&q=80" data-title="Colourful Ethnic Fabric Displays">
-          <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=600&q=80" alt="Clothing Rail Display" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+        <div class="gallery-item group relative h-64 rounded-xl overflow-hidden cursor-pointer bg-charcoal/5" data-index="1" data-src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=1400&q=80" data-title="हल्दी व पूजा स्पेशल पीतांबरी सिल्क (Yellow Silk Saree)">
+          <img src="https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=600&q=80" alt="पीली सिल्क साड़ी" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
           <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center p-4 text-center">
-            <span class="text-white text-xs font-medium tracking-wide flex items-center gap-1.5"><i data-lucide="maximize-2" class="w-4 h-4 text-gold"></i> View Photo</span>
+            <span class="text-white text-xs font-medium tracking-wide flex items-center gap-1.5"><i data-lucide="maximize-2" class="w-4 h-4 text-gold"></i> <span data-i18n="view_photo">बड़ा देखें</span></span>
           </div>
         </div>
 
-        <!-- Gallery Item 3 -->
-        <div class="gallery-item group relative h-64 rounded-xl overflow-hidden cursor-pointer bg-charcoal/5" data-index="2" data-src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=1400&q=80" data-title="Festive Silk & Embroidery Patterns">
-          <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=600&q=80" alt="Festive Attire Showcase" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+        <div class="gallery-item group relative h-64 rounded-xl overflow-hidden cursor-pointer bg-charcoal/5" data-index="2" data-src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=1400&q=80" data-title="दुल्हन लहंगा व चुनरी सेट (Bridal Lehenga Choli)">
+          <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=600&q=80" alt="दुल्हन लहंगा" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
           <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center p-4 text-center">
-            <span class="text-white text-xs font-medium tracking-wide flex items-center gap-1.5"><i data-lucide="maximize-2" class="w-4 h-4 text-gold"></i> View Photo</span>
+            <span class="text-white text-xs font-medium tracking-wide flex items-center gap-1.5"><i data-lucide="maximize-2" class="w-4 h-4 text-gold"></i> <span data-i18n="view_photo">बड़ा देखें</span></span>
           </div>
         </div>
 
-        <!-- Gallery Item 4 -->
-        <div class="gallery-item group relative h-64 rounded-xl overflow-hidden cursor-pointer bg-charcoal/5" data-index="3" data-src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=1400&q=80" data-title="Curated Casual Shirts & Polos">
-          <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?auto=format&fit=crop&w=600&q=80" alt="Shirt Collection Close-up" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+        <div class="gallery-item group relative h-64 rounded-xl overflow-hidden cursor-pointer bg-charcoal/5" data-index="3" data-src="https://images.unsplash.com/photo-1597983073493-88cd35cf93b0?auto=format&fit=crop&w=1400&q=80" data-title="उत्सव स्पेशल कुर्ता-पायजामा (Men's Silk Kurta)">
+          <img src="https://images.unsplash.com/photo-1597983073493-88cd35cf93b0?auto=format&fit=crop&w=600&q=80" alt="पुरुषों का कुर्ता पायजामा" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
           <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center p-4 text-center">
-            <span class="text-white text-xs font-medium tracking-wide flex items-center gap-1.5"><i data-lucide="maximize-2" class="w-4 h-4 text-gold"></i> View Photo</span>
+            <span class="text-white text-xs font-medium tracking-wide flex items-center gap-1.5"><i data-lucide="maximize-2" class="w-4 h-4 text-gold"></i> <span data-i18n="view_photo">बड़ा देखें</span></span>
           </div>
         </div>
 
-        <!-- Gallery Item 5 -->
-        <div class="gallery-item group relative h-64 rounded-xl overflow-hidden cursor-pointer bg-charcoal/5" data-index="4" data-src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=1400&q=80" data-title="Elegant Women's Traditional Wear">
-          <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=600&q=80" alt="Women Ethnic Wear" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+        <div class="gallery-item group relative h-64 rounded-xl overflow-hidden cursor-pointer bg-charcoal/5" data-index="4" data-src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1400&q=80" data-title="रंग-बिरंगे थान व साड़ी रैक (Store Saree Racks)">
+          <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=600&q=80" alt="दुकान के साड़ी रैक" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
           <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center p-4 text-center">
-            <span class="text-white text-xs font-medium tracking-wide flex items-center gap-1.5"><i data-lucide="maximize-2" class="w-4 h-4 text-gold"></i> View Photo</span>
+            <span class="text-white text-xs font-medium tracking-wide flex items-center gap-1.5"><i data-lucide="maximize-2" class="w-4 h-4 text-gold"></i> <span data-i18n="view_photo">बड़ा देखें</span></span>
           </div>
         </div>
 
-        <!-- Gallery Item 6 -->
-        <div class="gallery-item group relative h-64 rounded-xl overflow-hidden cursor-pointer bg-charcoal/5" data-index="5" data-src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=1400&q=80" data-title="Seasonal Wardrobe Styles">
-          <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=600&q=80" alt="Fashion Editorial Concept" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+        <div class="gallery-item group relative h-64 rounded-xl overflow-hidden cursor-pointer bg-charcoal/5" data-index="5" data-src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=1400&q=80" data-title="मेंस फॉर्मल व कैजुअल शर्ट्स (Men's Shirts)">
+          <img src="https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=600&q=80" alt="शर्ट्स कलेक्शन" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
           <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center p-4 text-center">
-            <span class="text-white text-xs font-medium tracking-wide flex items-center gap-1.5"><i data-lucide="maximize-2" class="w-4 h-4 text-gold"></i> View Photo</span>
+            <span class="text-white text-xs font-medium tracking-wide flex items-center gap-1.5"><i data-lucide="maximize-2" class="w-4 h-4 text-gold"></i> <span data-i18n="view_photo">बड़ा देखें</span></span>
           </div>
         </div>
 
-        <!-- Gallery Item 7 -->
-        <div class="gallery-item group relative h-64 rounded-xl overflow-hidden cursor-pointer bg-charcoal/5" data-index="6" data-src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=1400&q=80" data-title="Men's Formal & Classic Silhouettes">
-          <img src="https://images.unsplash.com/photo-1507679799987-c73779587ccf?auto=format&fit=crop&w=600&q=80" alt="Men's Tailored Suits" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+        <div class="gallery-item group relative h-64 rounded-xl overflow-hidden cursor-pointer bg-charcoal/5" data-index="6" data-src="https://images.unsplash.com/photo-1574634534894-89d7576c8259?auto=format&fit=crop&w=1400&q=80" data-title="पार्टी वियर अनारकली व सूट (Partywear Suit)">
+          <img src="https://images.unsplash.com/photo-1574634534894-89d7576c8259?auto=format&fit=crop&w=600&q=80" alt="अनारकली सूट" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
           <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center p-4 text-center">
-            <span class="text-white text-xs font-medium tracking-wide flex items-center gap-1.5"><i data-lucide="maximize-2" class="w-4 h-4 text-gold"></i> View Photo</span>
+            <span class="text-white text-xs font-medium tracking-wide flex items-center gap-1.5"><i data-lucide="maximize-2" class="w-4 h-4 text-gold"></i> <span data-i18n="view_photo">बड़ा देखें</span></span>
           </div>
         </div>
 
-        <!-- Gallery Item 8 -->
-        <div class="gallery-item group relative h-64 rounded-xl overflow-hidden cursor-pointer bg-charcoal/5" data-index="7" data-src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=1400&q=80" data-title="Daily Casuals & Accessories">
-          <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?auto=format&fit=crop&w=600&q=80" alt="Casual Outfit" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
+        <div class="gallery-item group relative h-64 rounded-xl overflow-hidden cursor-pointer bg-charcoal/5" data-index="7" data-src="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&w=1400&q=80" data-title="पारंपरिक उत्सव परिधान (Festival Ethnic Display)">
+          <img src="https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&w=600&q=80" alt="त्योहारों के कपड़े" class="w-full h-full object-cover transition duration-500 group-hover:scale-110">
           <div class="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center p-4 text-center">
-            <span class="text-white text-xs font-medium tracking-wide flex items-center gap-1.5"><i data-lucide="maximize-2" class="w-4 h-4 text-gold"></i> View Photo</span>
+            <span class="text-white text-xs font-medium tracking-wide flex items-center gap-1.5"><i data-lucide="maximize-2" class="w-4 h-4 text-gold"></i> <span data-i18n="view_photo">बड़ा देखें</span></span>
           </div>
         </div>
 
       </div>
-
-      <p class="text-center text-xs text-muted/70 mt-6 italic">
-        * Photography placeholders shown for aesthetic reference. Click any picture to enlarge.
-      </p>
 
     </div>
   </section>
 
-  <!-- Customer Testimonials Section -->
+  <!-- Real Customer Testimonials Section -->
   <section id="reviews" class="py-20 bg-ivory relative overflow-hidden">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       
-      <span class="text-xs font-semibold tracking-[0.2em] text-gold uppercase">Customer Feedback</span>
-      <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mt-2">What Our Customers Say</h2>
+      <span class="text-xs font-semibold tracking-[0.2em] text-maroon uppercase" data-i18n="rev_tag">ग्राहकों के अनुभव</span>
+      <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mt-2" data-i18n="rev_heading">राबर्ट्सगंज के लोगों की जुबानी</h2>
       <div class="w-16 h-0.5 bg-gold mx-auto my-3"></div>
-      <p class="text-sm text-muted mb-12">Actual feedback and word-of-mouth reviews shared by Robertsganj locals.</p>
+      <p class="text-sm text-muted mb-12" data-i18n="rev_sub">कुशवाहा बाजार पर विश्वास जताने वाले हमारे सम्मानित ग्राहकों के विचार</p>
 
       <!-- Testimonial Slider Container -->
-      <div class="relative bg-white rounded-3xl p-8 sm:p-12 shadow-md border border-charcoal/5 min-h-[260px] flex items-center justify-center">
+      <div class="relative bg-white rounded-3xl p-8 sm:p-12 shadow-md border border-charcoal/10 min-h-[260px] flex items-center justify-center">
         
         <i data-lucide="quote" class="w-12 h-12 text-gold/20 absolute top-6 left-6"></i>
 
@@ -734,16 +682,16 @@
               <i data-lucide="star" class="w-5 h-5 fill-current"></i>
             </div>
             <p class="font-serif text-xl sm:text-2xl italic text-primary leading-relaxed">
-              "Very nice shop."
+              "Very nice shop. Bahut badhiya kapde milte hain yahan."
             </p>
             <div class="mt-6">
               <h4 class="font-sans font-bold text-base text-primary">Akash Singh Kushwaha</h4>
-              <span class="text-xs text-gold font-medium">Customer Comment</span>
+              <span class="text-xs text-maroon font-semibold" data-i18n="rev_badge">स्थानीय ग्राहक • राबर्ट्सगंज</span>
             </div>
           </div>
 
           <!-- Review 2: Dhiraj Rav -->
-          <div class="testimonial-item">
+          <div class="testimonial-item hidden">
             <div class="flex justify-center text-gold mb-4 space-x-1">
               <i data-lucide="star" class="w-5 h-5 fill-current"></i>
               <i data-lucide="star" class="w-5 h-5 fill-current"></i>
@@ -756,12 +704,12 @@
             </p>
             <div class="mt-6">
               <h4 class="font-sans font-bold text-base text-primary">Dhiraj Rav</h4>
-              <span class="text-xs text-gold font-medium">Customer Comment</span>
+              <span class="text-xs text-maroon font-semibold" data-i18n="rev_badge">स्थानीय ग्राहक • राबर्ट्सगंज</span>
             </div>
           </div>
 
-          <!-- Review 3: Mangal Patel -->
-          <div class="testimonial-item">
+          <!-- Review 3: Ashish Modanwal -->
+          <div class="testimonial-item hidden">
             <div class="flex justify-center text-gold mb-4 space-x-1">
               <i data-lucide="star" class="w-5 h-5 fill-current"></i>
               <i data-lucide="star" class="w-5 h-5 fill-current"></i>
@@ -770,34 +718,16 @@
               <i data-lucide="star" class="w-5 h-5 fill-current"></i>
             </div>
             <p class="font-serif text-xl sm:text-2xl italic text-primary leading-relaxed">
-              "Bahut achhi dukan hai."
-            </p>
-            <div class="mt-6">
-              <h4 class="font-sans font-bold text-base text-primary">Mangal Patel</h4>
-              <span class="text-xs text-gold font-medium">Customer Comment</span>
-            </div>
-          </div>
-
-          <!-- Review 4: Ashish Modanwal -->
-          <div class="testimonial-item">
-            <div class="flex justify-center text-gold mb-4 space-x-1">
-              <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-              <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-              <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-              <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-              <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-            </div>
-            <p class="font-serif text-xl sm:text-2xl italic text-primary leading-relaxed">
-              "Very nice shop and staff also."
+              "Very nice shop and staff also. Sabhi log bahut achhe se kapde dikhate hain."
             </p>
             <div class="mt-6">
               <h4 class="font-sans font-bold text-base text-primary">Ashish Modanwal</h4>
-              <span class="text-xs text-gold font-medium">Customer Comment</span>
+              <span class="text-xs text-maroon font-semibold" data-i18n="rev_badge">स्थानीय ग्राहक • राबर्ट्सगंज</span>
             </div>
           </div>
 
-          <!-- Review 5: Aanant Babu -->
-          <div class="testimonial-item">
+          <!-- Review 4: Mangal Patel -->
+          <div class="testimonial-item hidden">
             <div class="flex justify-center text-gold mb-4 space-x-1">
               <i data-lucide="star" class="w-5 h-5 fill-current"></i>
               <i data-lucide="star" class="w-5 h-5 fill-current"></i>
@@ -806,35 +736,17 @@
               <i data-lucide="star" class="w-5 h-5 fill-current"></i>
             </div>
             <p class="font-serif text-xl sm:text-2xl italic text-primary leading-relaxed">
-              "Very nice shop."
+              "Bahut achhi dukan hai. Saree aur suits ke designs lajawab hain."
             </p>
             <div class="mt-6">
-              <h4 class="font-sans font-bold text-base text-primary">Aanant Babu</h4>
-              <span class="text-xs text-gold font-medium">Customer Comment</span>
-            </div>
-          </div>
-
-          <!-- Review 6: Ram Janam Kumar -->
-          <div class="testimonial-item">
-            <div class="flex justify-center text-gold mb-4 space-x-1">
-              <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-              <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-              <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-              <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-              <i data-lucide="star" class="w-5 h-5 fill-current"></i>
-            </div>
-            <p class="font-serif text-xl sm:text-2xl italic text-primary leading-relaxed">
-              "Ek number shop hai."
-            </p>
-            <div class="mt-6">
-              <h4 class="font-sans font-bold text-base text-primary">Ram Janam Kumar</h4>
-              <span class="text-xs text-gold font-medium">Customer Comment</span>
+              <h4 class="font-sans font-bold text-base text-primary">Mangal Patel</h4>
+              <span class="text-xs text-maroon font-semibold" data-i18n="rev_badge">स्थानीय ग्राहक • राबर्ट्सगंज</span>
             </div>
           </div>
 
         </div>
 
-        <!-- Slider Arrow Controls -->
+        <!-- Slider Controls -->
         <button id="test-prev" aria-label="Previous Review" class="absolute left-2 sm:-left-5 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white text-primary hover:bg-gold hover:text-white shadow-md flex items-center justify-center transition border border-charcoal/10">
           <i data-lucide="chevron-left" class="w-5 h-5"></i>
         </button>
@@ -844,25 +756,24 @@
 
       </div>
 
-      <!-- Testimonials Call to Action -->
       <div class="mt-10">
         <a href="#store-info" class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-primary hover:text-gold transition">
-          Visit Us and Experience It Yourself <i data-lucide="arrow-right" class="w-4 h-4"></i>
+          <span data-i18n="rev_cta">स्वयं पधारें और अनुभव करें</span> <i data-lucide="arrow-right" class="w-4 h-4"></i>
         </a>
       </div>
 
     </div>
   </section>
 
-  <!-- Visit Our Store & Location Section -->
-  <section id="store-info" class="py-20 bg-white border-y border-charcoal/5">
+  <!-- Store Location, Hours & Map -->
+  <section id="store-info" class="py-20 bg-white border-y border-charcoal/10">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-2xl mx-auto mb-14">
-        <span class="text-xs font-semibold tracking-[0.2em] text-gold uppercase">In-Person Shopping</span>
-        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mt-2">Visit Our Store</h2>
+        <span class="text-xs font-semibold tracking-[0.2em] text-maroon uppercase" data-i18n="loc_tag">दुकान का पता व समय</span>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mt-2" data-i18n="loc_heading">कुशवाहा बाजार पधारें</h2>
         <div class="w-16 h-0.5 bg-gold mx-auto my-3"></div>
-        <p class="text-sm text-muted">We look forward to welcoming you at our Robertsganj boutique.</p>
+        <p class="text-sm text-muted" data-i18n="loc_sub">उत्तर मोहाल, राबर्ट्सगंज में आपका सहर्ष स्वागत है।</p>
       </div>
 
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
@@ -870,33 +781,32 @@
         <!-- Left: Address & Timing Cards -->
         <div class="lg:col-span-5 space-y-6">
           
-          <!-- Store Card -->
-          <div class="bg-ivory p-6 sm:p-8 rounded-2xl border border-charcoal/5 space-y-4">
+          <div class="bg-ivory p-6 sm:p-8 rounded-2xl border border-charcoal/10 space-y-4">
             <div class="flex items-start gap-4">
-              <div class="w-12 h-12 rounded-xl bg-gold/15 text-gold flex items-center justify-center flex-shrink-0">
+              <div class="w-12 h-12 rounded-xl bg-gold/15 text-maroon flex items-center justify-center flex-shrink-0">
                 <i data-lucide="map-pin" class="w-6 h-6"></i>
               </div>
               <div>
                 <h3 class="font-serif text-xl font-bold text-primary">Kushwaha Bazar (कुशवाहा बाजार)</h3>
-                <p class="text-sm text-charcoal/80 mt-1 leading-relaxed">
-                  Uttar Mohal, Robertsganj,<br>
-                  Uttar Pradesh 231216, India
+                <p class="text-sm text-charcoal/80 mt-1 leading-relaxed" data-i18n="address_text">
+                  उत्तर मोहाल, राबर्ट्सगंज,<br>
+                  सोनभद्र, उत्तर प्रदेश - 231216, भारत
                 </p>
               </div>
             </div>
 
             <div class="pt-4 border-t border-charcoal/10 flex items-start gap-4">
-              <div class="w-12 h-12 rounded-xl bg-gold/15 text-gold flex items-center justify-center flex-shrink-0">
+              <div class="w-12 h-12 rounded-xl bg-gold/15 text-maroon flex items-center justify-center flex-shrink-0">
                 <i data-lucide="clock" class="w-6 h-6"></i>
               </div>
               <div>
-                <h4 class="font-serif text-base font-bold text-primary">Opening Hours</h4>
-                <p class="text-sm text-charcoal/80 mt-0.5 font-medium text-emerald-700">
-                  Open Everyday (Monday – Sunday)
+                <h4 class="font-serif text-base font-bold text-primary" data-i18n="timing_title">खुलने का समय</h4>
+                <p class="text-sm text-emerald-800 font-semibold" data-i18n="timing_days">
+                  सातों दिन खुला (सोमवार – रविवार)
                 </p>
-                <p class="text-sm text-muted">7:00 AM – 9:30 PM IST</p>
-                <span class="inline-block mt-1 text-[11px] bg-emerald-100 text-emerald-800 px-2.5 py-0.5 rounded-full font-semibold">
-                  Open Today
+                <p class="text-sm text-muted" data-i18n="timing_hours">सुबह 7:00 बजे से रात्रि 9:30 बजे तक</p>
+                <span class="inline-block mt-1 text-[11px] bg-emerald-100 text-emerald-800 px-2.5 py-0.5 rounded-full font-semibold" data-i18n="open_today">
+                  आज खुला है • Open Today
                 </span>
               </div>
             </div>
@@ -906,34 +816,32 @@
                  target="_blank" 
                  rel="noopener noreferrer" 
                  class="flex-1 bg-primary hover:bg-gold text-white text-center py-3 rounded-full text-xs font-semibold tracking-wider uppercase transition flex items-center justify-center gap-2">
-                <i data-lucide="navigation" class="w-4 h-4"></i> Get Directions
+                <i data-lucide="navigation" class="w-4 h-4"></i> <span data-i18n="btn_maps">गूगल मैप्स पर रास्ता देखें</span>
               </a>
-              <a href="https://wa.me/?text=Hello%20Kushwaha%20Bazar%2C%20I%20am%20planning%20to%20visit%20your%20store%20in%20Robertsganj." 
+              <a href="https://wa.me/?text=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%20%E0%A4%95%E0%A5%81%E0%A4%B6%E0%A4%B5%E0%A4%BE%E0%A4%B9%E0%A4%BE%20%E0%A4%AC%E0%A4%BE%E0%A4%9C%E0%A4%BE%E0%A4%B0" 
                  target="_blank" 
                  rel="noopener noreferrer" 
                  class="flex-1 bg-[#25D366] hover:bg-[#1EBE5B] text-white text-center py-3 rounded-full text-xs font-semibold tracking-wider uppercase transition flex items-center justify-center gap-2">
-                <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp Us
+                <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp
               </a>
             </div>
           </div>
 
-          <!-- Practical Store Notes -->
           <div class="bg-white p-6 rounded-2xl border border-charcoal/10">
             <h4 class="text-xs font-bold uppercase tracking-wider text-primary mb-2 flex items-center gap-2">
-              <i data-lucide="info" class="w-4 h-4 text-gold"></i> Helpful Visitor Tips
+              <i data-lucide="info" class="w-4 h-4 text-gold"></i> <span data-i18n="tips_title">ग्राहकों के लिए उपयोगी जानकारी</span>
             </h4>
             <ul class="text-xs text-muted space-y-2 list-disc list-inside">
-              <li>Fitting and browsing are welcome in-store.</li>
-              <li>Morning hours (7 AM – 11 AM) are ideal for relaxed browsing.</li>
-              <li>Located conveniently within the Uttar Mohal commercial area.</li>
+              <li data-i18n="tip_1">शादी व लगन के लिए परिवार सहित आराम से बैठकर साड़ी व कपड़े पसंद करने की व्यवस्था।</li>
+              <li data-i18n="tip_2">सुबह 7 बजे से 11 बजे तक शांत व सुकून भरी खरीदारी का उत्तम समय।</li>
+              <li data-i18n="tip_3">उत्तर मोहाल मेन रोड से आसानी से पहुंचने योग्य।</li>
             </ul>
           </div>
 
         </div>
 
-        <!-- Right: Map Embed Container -->
+        <!-- Right: Map Embed -->
         <div class="lg:col-span-7 h-[420px] rounded-2xl overflow-hidden border border-charcoal/10 shadow-sm relative">
-          <!-- Google Maps Iframe matching Uttar Mohal, Robertsganj, UP 231216 -->
           <iframe 
             title="Kushwaha Bazar Robertsganj Map Location"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14467.432881944738!2d83.0560!3d24.6980!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x398efcdfb8f2445b%3A0x7d87bc5c994bc26c!2sRobertsganj%2C%20Uttar%20Pradesh%20231216!5e0!3m2!1sen!2sin!4v1700000000000" 
@@ -943,11 +851,11 @@
             allowfullscreen="" 
             loading="lazy" 
             referrerpolicy="no-referrer-when-downgrade"
-            class="w-full h-full grayscale-[20%] contrast-[1.05]">
+            class="w-full h-full grayscale-[15%] contrast-[1.05]">
           </iframe>
           <div class="absolute bottom-4 left-4 bg-white/95 backdrop-blur-md px-4 py-2 rounded-xl text-[11px] shadow border border-charcoal/10 flex items-center gap-2">
-            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-gold"></i>
-            <span>Uttar Mohal, Robertsganj, UP 231216</span>
+            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-maroon"></i>
+            <span>उत्तर मोहाल, राबर्ट्सगंज (सोनभद्र), उ.प्र. 231216</span>
           </div>
         </div>
 
@@ -956,64 +864,54 @@
     </div>
   </section>
 
-  <!-- Contact & WhatsApp Enquiry Section -->
+  <!-- Interactive Contact & WhatsApp Form -->
   <section id="contact" class="py-20 bg-ivory">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="text-xs font-semibold tracking-[0.2em] text-gold uppercase">Direct Communication</span>
-        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mt-2">Let's Find Your Next Favourite Look</h2>
+        <span class="text-xs font-semibold tracking-[0.2em] text-maroon uppercase" data-i18n="form_tag">सीधा संपर्क</span>
+        <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-primary mt-2" data-i18n="form_heading">अपनी पसंद हमें बताएं</h2>
         <div class="w-16 h-0.5 bg-gold mx-auto my-3"></div>
-        <p class="text-sm text-muted">Fill out the enquiry form below or chat instantly with us directly on WhatsApp.</p>
+        <p class="text-sm text-muted" data-i18n="form_sub">नीचे फॉर्म भरें या एक क्लिक में सीधे WhatsApp पर चैट शुरू करें।</p>
       </div>
 
-      <!-- Contact Card -->
       <div class="bg-white rounded-3xl p-8 sm:p-12 shadow-sm border border-charcoal/10">
         
         <form id="contact-form" class="space-y-6" novalidate>
           
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <!-- Name Field -->
             <div>
-              <label for="contact-name" class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-2">Your Name *</label>
-              <input type="text" id="contact-name" required placeholder="Enter your full name" 
-                     class="w-full px-4 py-3 rounded-xl border border-charcoal/20 bg-ivory/30 focus:outline-none focus:border-gold text-sm transition">
-              <span id="name-error" class="hidden text-rose-500 text-xs mt-1">Please enter your name.</span>
+              <label for="contact-name" class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-2" data-i18n="form_lbl_name">आपका शुभ नाम *</label>
+              <input type="text" id="contact-name" required placeholder="जैसे: रमेश कुशवाहा / सीमा पटेल" 
+                     class="w-full px-4 py-3 rounded-xl border border-charcoal/20 bg-ivory/40 focus:outline-none focus:border-gold text-sm transition">
+              <span id="name-error" class="hidden text-rose-500 text-xs mt-1" data-i18n="err_name">कृपया अपना नाम दर्ज करें।</span>
             </div>
 
-            <!-- Phone Field -->
             <div>
-              <label for="contact-phone" class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-2">Phone Number *</label>
-              <input type="tel" id="contact-phone" required placeholder="10-digit mobile number" 
-                     class="w-full px-4 py-3 rounded-xl border border-charcoal/20 bg-ivory/30 focus:outline-none focus:border-gold text-sm transition">
-              <span id="phone-error" class="hidden text-rose-500 text-xs mt-1">Please enter a valid 10-digit phone number.</span>
+              <label for="contact-phone" class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-2" data-i18n="form_lbl_phone">मोबाइल नंबर *</label>
+              <input type="tel" id="contact-phone" required placeholder="10 अंकों का मोबाइल नंबर" 
+                     class="w-full px-4 py-3 rounded-xl border border-charcoal/20 bg-ivory/40 focus:outline-none focus:border-gold text-sm transition">
+              <span id="phone-error" class="hidden text-rose-500 text-xs mt-1" data-i18n="err_phone">कृपया वैध 10 अंकों का फोन नंबर भरें।</span>
             </div>
           </div>
 
-          <!-- Message Field -->
           <div>
-            <label for="contact-message" class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-2">Message or Style Enquiry *</label>
-            <textarea id="contact-message" rows="4" required placeholder="Tell us which style, size, or occasion you are shopping for..." 
-                      class="w-full px-4 py-3 rounded-xl border border-charcoal/20 bg-ivory/30 focus:outline-none focus:border-gold text-sm transition"></textarea>
-            <span id="message-error" class="hidden text-rose-500 text-xs mt-1">Please enter your enquiry message.</span>
+            <label for="contact-message" class="block text-xs font-semibold uppercase tracking-wider text-charcoal mb-2" data-i18n="form_lbl_msg">संदेश / क्या कपड़ा चाहिए? *</label>
+            <textarea id="contact-message" rows="4" required placeholder="उदा: मुझे शादी के लिए लाल बनारसी साड़ी और कुर्ता सेट देखना है..." 
+                      class="w-full px-4 py-3 rounded-xl border border-charcoal/20 bg-ivory/40 focus:outline-none focus:border-gold text-sm transition"></textarea>
+            <span id="message-error" class="hidden text-rose-500 text-xs mt-1" data-i18n="err_msg">कृपया अपनी आवश्यकता लिखें।</span>
           </div>
 
-          <!-- Status Box -->
           <div id="form-feedback" class="hidden p-4 rounded-xl text-xs font-medium"></div>
 
-          <!-- Action Buttons -->
           <div class="flex flex-col sm:flex-row gap-4 pt-2">
-            <button type="submit" class="flex-1 bg-primary hover:bg-gold text-white py-3.5 rounded-full text-xs font-semibold tracking-wider uppercase transition duration-300 shadow">
-              Send Website Enquiry
+            <button type="submit" class="flex-1 bg-primary hover:bg-gold text-white py-3.5 rounded-full text-xs font-bold tracking-wider uppercase transition duration-300 shadow" data-i18n="btn_send_inquiry">
+              पूछताछ भेजें
             </button>
-            <button type="button" id="whatsapp-direct-btn" class="flex-1 bg-[#25D366] hover:bg-[#1EBE5B] text-white py-3.5 rounded-full text-xs font-semibold tracking-wider uppercase transition duration-300 flex items-center justify-center gap-2 shadow">
-              <i data-lucide="message-circle" class="w-4 h-4"></i> Enquire via WhatsApp
+            <button type="button" id="whatsapp-direct-btn" class="flex-1 bg-[#25D366] hover:bg-[#1EBE5B] text-white py-3.5 rounded-full text-xs font-bold tracking-wider uppercase transition duration-300 flex items-center justify-center gap-2 shadow">
+              <i data-lucide="message-circle" class="w-4 h-4"></i> <span data-i18n="btn_send_wa">WhatsApp पर तुरंत पूछें</span>
             </button>
           </div>
-
-          <p class="text-center text-[11px] text-muted pt-2">
-            * Direct WhatsApp opens your chat with prefilled text so you can send instantly.
-          </p>
 
         </form>
 
@@ -1023,70 +921,58 @@
   </section>
 
   <!-- FAQ Section -->
-  <section id="faq" class="py-20 bg-white border-t border-charcoal/5">
+  <section id="faq" class="py-20 bg-white border-t border-charcoal/10">
     <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center mb-12">
-        <span class="text-xs font-semibold tracking-[0.2em] text-gold uppercase">Answers & Info</span>
-        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-primary mt-2">Frequently Asked Questions</h2>
+        <span class="text-xs font-semibold tracking-[0.2em] text-maroon uppercase" data-i18n="faq_tag">अक्सर पूछे जाने वाले सवाल</span>
+        <h2 class="font-serif text-3xl sm:text-4xl font-bold text-primary mt-2" data-i18n="faq_heading">ज़रूरी प्रश्न और उत्तर</h2>
         <div class="w-16 h-0.5 bg-gold mx-auto my-3"></div>
       </div>
 
-      <!-- Single Open Accordion Container -->
       <div class="space-y-4" id="faq-accordion">
         
         <!-- FAQ 1 -->
-        <div class="faq-card border border-charcoal/10 rounded-2xl overflow-hidden bg-ivory/40">
-          <button class="faq-question w-full px-6 py-5 text-left flex justify-between items-center text-primary font-serif font-bold text-base focus:outline-none" aria-expanded="false">
-            <span>Where is Kushwaha Bazar located?</span>
+        <div class="faq-card border border-charcoal/10 rounded-2xl overflow-hidden bg-ivory/50">
+          <button class="faq-question w-full px-6 py-5 text-left flex justify-between items-center text-primary font-serif font-bold text-base focus:outline-none">
+            <span data-i18n="faq_q1">कुशवाहा बाजार दुकान कहां स्थित है?</span>
             <i data-lucide="chevron-down" class="faq-arrow w-5 h-5 text-gold transition-transform duration-300"></i>
           </button>
-          <div class="faq-answer hidden px-6 pb-5 text-xs sm:text-sm text-charcoal/80 leading-relaxed border-t border-charcoal/5 pt-3">
-            Kushwaha Bazar is conveniently located at <strong>Uttar Mohal, Robertsganj, Uttar Pradesh 231216, India</strong>. You can reach our store directly via Google Maps navigation.
+          <div class="faq-answer hidden px-6 pb-5 text-xs sm:text-sm text-charcoal/80 leading-relaxed border-t border-charcoal/5 pt-3" data-i18n="faq_a1">
+            हमारी दुकान <strong>उत्तर मोहाल, राबर्ट्सगंज, सोनभद्र (उत्तर प्रदेश) - 231216</strong> में स्थित है। आप सीधे गूगल मैप्स द्वारा आसानी से पहुंच सकते हैं।
           </div>
         </div>
 
         <!-- FAQ 2 -->
-        <div class="faq-card border border-charcoal/10 rounded-2xl overflow-hidden bg-ivory/40">
-          <button class="faq-question w-full px-6 py-5 text-left flex justify-between items-center text-primary font-serif font-bold text-base focus:outline-none" aria-expanded="false">
-            <span>What are the store opening hours?</span>
+        <div class="faq-card border border-charcoal/10 rounded-2xl overflow-hidden bg-ivory/50">
+          <button class="faq-question w-full px-6 py-5 text-left flex justify-between items-center text-primary font-serif font-bold text-base focus:outline-none">
+            <span data-i18n="faq_q2">दुकान के खुलने और बंद होने का समय क्या है?</span>
             <i data-lucide="chevron-down" class="faq-arrow w-5 h-5 text-gold transition-transform duration-300"></i>
           </button>
-          <div class="faq-answer hidden px-6 pb-5 text-xs sm:text-sm text-charcoal/80 leading-relaxed border-t border-charcoal/5 pt-3">
-            We are open 7 days a week, Monday through Sunday, from <strong>7:00 AM to 9:30 PM</strong>.
+          <div class="faq-answer hidden px-6 pb-5 text-xs sm:text-sm text-charcoal/80 leading-relaxed border-t border-charcoal/5 pt-3" data-i18n="faq_a2">
+            हम सप्ताह के सातों दिन, सोमवार से रविवार, <strong>सुबह 7:00 बजे से रात 9:30 बजे तक</strong> सेवा में उपलब्ध रहते हैं।
           </div>
         </div>
 
         <!-- FAQ 3 -->
-        <div class="faq-card border border-charcoal/10 rounded-2xl overflow-hidden bg-ivory/40">
-          <button class="faq-question w-full px-6 py-5 text-left flex justify-between items-center text-primary font-serif font-bold text-base focus:outline-none" aria-expanded="false">
-            <span>Can I visit the store to shop in person?</span>
+        <div class="faq-card border border-charcoal/10 rounded-2xl overflow-hidden bg-ivory/50">
+          <button class="faq-question w-full px-6 py-5 text-left flex justify-between items-center text-primary font-serif font-bold text-base focus:outline-none">
+            <span data-i18n="faq_q3">क्या शादी-विवाह के लिए थोक या ज्यादा साड़ियां मिल सकती हैं?</span>
             <i data-lucide="chevron-down" class="faq-arrow w-5 h-5 text-gold transition-transform duration-300"></i>
           </button>
-          <div class="faq-answer hidden px-6 pb-5 text-xs sm:text-sm text-charcoal/80 leading-relaxed border-t border-charcoal/5 pt-3">
-            Yes, absolutely! Kushwaha Bazar is primarily a local physical clothing boutique. We warmly encourage you to visit us in person to see the fabrics, try on clothing, and enjoy attentive customer service.
+          <div class="faq-answer hidden px-6 pb-5 text-xs sm:text-sm text-charcoal/80 leading-relaxed border-t border-charcoal/5 pt-3" data-i18n="faq_a3">
+            जी हां, शादी, लग्न, तिलक और विदाई के लिए साड़ी के सेट, लहंगे, चुनरी और पैंट-शर्ट के थान उचित व किफायती दर पर उपलब्ध कराए जाते हैं।
           </div>
         </div>
 
         <!-- FAQ 4 -->
-        <div class="faq-card border border-charcoal/10 rounded-2xl overflow-hidden bg-ivory/40">
-          <button class="faq-question w-full px-6 py-5 text-left flex justify-between items-center text-primary font-serif font-bold text-base focus:outline-none" aria-expanded="false">
-            <span>How can I enquire about available clothing?</span>
+        <div class="faq-card border border-charcoal/10 rounded-2xl overflow-hidden bg-ivory/50">
+          <button class="faq-question w-full px-6 py-5 text-left flex justify-between items-center text-primary font-serif font-bold text-base focus:outline-none">
+            <span data-i18n="faq_q4">क्या WhatsApp पर नई डिजाइनों की फोटो मंगवाई जा सकती है?</span>
             <i data-lucide="chevron-down" class="faq-arrow w-5 h-5 text-gold transition-transform duration-300"></i>
           </button>
-          <div class="faq-answer hidden px-6 pb-5 text-xs sm:text-sm text-charcoal/80 leading-relaxed border-t border-charcoal/5 pt-3">
-            You can reach out anytime by clicking our WhatsApp buttons on this website, submitting an enquiry through our contact form, or visiting the store in Uttar Mohal, Robertsganj.
-          </div>
-        </div>
-
-        <!-- FAQ 5 -->
-        <div class="faq-card border border-charcoal/10 rounded-2xl overflow-hidden bg-ivory/40">
-          <button class="faq-question w-full px-6 py-5 text-left flex justify-between items-center text-primary font-serif font-bold text-base focus:outline-none" aria-expanded="false">
-            <span>How can I get directions to the store?</span>
-            <i data-lucide="chevron-down" class="faq-arrow w-5 h-5 text-gold transition-transform duration-300"></i>
-          </button>
-          <div class="faq-answer hidden px-6 pb-5 text-xs sm:text-sm text-charcoal/80 leading-relaxed border-t border-charcoal/5 pt-3">
-            Simply click the <strong>Get Directions</strong> button in the Store & Hours section above to open the verified location in Google Maps on your phone or computer.
+          <div class="faq-answer hidden px-6 pb-5 text-xs sm:text-sm text-charcoal/80 leading-relaxed border-t border-charcoal/5 pt-3" data-i18n="faq_a4">
+            बिल्कुल! आप वेबसाइट पर दिए गए 'WhatsApp' बटन पर क्लिक करके हमें संदेश भेज सकते हैं, हमारी टीम आपको उपलब्ध साड़ियों और कपड़ों के फोटो व दाम भेज देगी।
           </div>
         </div>
 
@@ -1095,222 +981,100 @@
     </div>
   </section>
 
-  <!-- Social Media Inspiration Showcase -->
-  <section class="py-16 bg-ivory">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-      
-      <span class="text-xs font-semibold tracking-[0.2em] text-gold uppercase">Boutique Lookbook</span>
-      <h2 class="font-serif text-3xl sm:text-4xl font-bold text-primary mt-2">Stay Inspired. Stay Stylish.</h2>
-      <p class="text-sm text-muted mt-2 mb-10">Follow fashion inspiration and visit Kushwaha Bazar in Robertsganj.</p>
-
-      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
-        <div class="relative group aspect-square rounded-xl overflow-hidden bg-charcoal/10">
-          <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=400&q=80" alt="Style 1" class="w-full h-full object-cover transition duration-300 group-hover:scale-110">
-          <div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white">
-            <i data-lucide="instagram" class="w-6 h-6 text-gold"></i>
-          </div>
-        </div>
-        <div class="relative group aspect-square rounded-xl overflow-hidden bg-charcoal/10">
-          <img src="https://images.unsplash.com/photo-1539109136881-3be0616acf4b?auto=format&fit=crop&w=400&q=80" alt="Style 2" class="w-full h-full object-cover transition duration-300 group-hover:scale-110">
-          <div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white">
-            <i data-lucide="instagram" class="w-6 h-6 text-gold"></i>
-          </div>
-        </div>
-        <div class="relative group aspect-square rounded-xl overflow-hidden bg-charcoal/10">
-          <img src="https://images.unsplash.com/photo-1617137984095-74e4e5e3613f?auto=format&fit=crop&w=400&q=80" alt="Style 3" class="w-full h-full object-cover transition duration-300 group-hover:scale-110">
-          <div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white">
-            <i data-lucide="instagram" class="w-6 h-6 text-gold"></i>
-          </div>
-        </div>
-        <div class="relative group aspect-square rounded-xl overflow-hidden bg-charcoal/10">
-          <img src="https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=400&q=80" alt="Style 4" class="w-full h-full object-cover transition duration-300 group-hover:scale-110">
-          <div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white">
-            <i data-lucide="instagram" class="w-6 h-6 text-gold"></i>
-          </div>
-        </div>
-        <div class="relative group aspect-square rounded-xl overflow-hidden bg-charcoal/10">
-          <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=400&q=80" alt="Style 5" class="w-full h-full object-cover transition duration-300 group-hover:scale-110">
-          <div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white">
-            <i data-lucide="instagram" class="w-6 h-6 text-gold"></i>
-          </div>
-        </div>
-        <div class="relative group aspect-square rounded-xl overflow-hidden bg-charcoal/10">
-          <img src="https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=400&q=80" alt="Style 6" class="w-full h-full object-cover transition duration-300 group-hover:scale-110">
-          <div class="absolute inset-0 bg-primary/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-white">
-            <i data-lucide="instagram" class="w-6 h-6 text-gold"></i>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- Stay Connected Call-to-Action Banner -->
-  <section class="py-16 bg-primary text-white relative overflow-hidden">
-    <div class="absolute -right-20 -bottom-20 w-80 h-80 rounded-full bg-gold/10 blur-3xl pointer-events-none"></div>
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10 space-y-6">
-      <span class="text-xs font-semibold tracking-[0.25em] text-gold uppercase">Kushwaha Bazar • Robertsganj</span>
-      <h2 class="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-ivory">Stay Connected with Kushwaha Bazar</h2>
-      <p class="text-sm sm:text-base text-white/80 max-w-xl mx-auto font-light">
-        Get in touch to discover our latest collections, verify size availability, and plan your visit to our store in Uttar Mohal.
-      </p>
-      <div class="pt-2 flex flex-wrap justify-center gap-4">
-        <a href="#contact" class="bg-gold hover:bg-gold-dark text-white px-8 py-3.5 rounded-full text-xs font-semibold tracking-wider uppercase transition shadow-lg">
-          Contact The Store
-        </a>
-        <a href="https://wa.me/?text=Hello%20Kushwaha%20Bazar%2C%20I%20would%20like%20to%20enquire%20about%20your%20clothing." 
-           target="_blank" 
-           rel="noopener noreferrer" 
-           class="border border-white/40 hover:border-gold hover:text-gold text-white px-8 py-3.5 rounded-full text-xs font-semibold tracking-wider uppercase transition flex items-center gap-2">
-          <i data-lucide="message-circle" class="w-4 h-4"></i> WhatsApp Chat
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- Premium Footer -->
-  <footer class="bg-[#0c0c0c] text-white/80 pt-16 pb-12 border-t border-charcoal/40">
+  <!-- Footer -->
+  <footer class="bg-[#120D0A] text-white/80 pt-16 pb-12 border-t border-charcoal/40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 pb-12 border-b border-white/10">
         
-        <!-- Brand Info -->
         <div class="space-y-4">
           <div class="flex flex-col">
             <span class="font-serif text-2xl font-bold tracking-tight text-white">KUSHWAHA BAZAR</span>
-            <span class="text-xs font-serif tracking-widest text-gold font-semibold uppercase">कुशवाहा बाजार</span>
+            <span class="text-xs font-serif tracking-widest text-gold font-bold uppercase">कुशवाहा बाजार • राबर्ट्सगंज</span>
           </div>
-          <p class="text-xs text-white/60 leading-relaxed">
-            Your destination for stylish, reliable, and celebratory fashion in Robertsganj, Uttar Pradesh. Celebrating authentic styles for every occasion.
+          <p class="text-xs text-white/70 leading-relaxed" data-i18n="ft_about">
+            राबर्ट्सगंज (सोनभद्र) में साड़ियों, लहंगों, कुर्ता-पायजामा और दैनिक परिधानों का सबसे विश्वसनीय स्थानीय वस्त्र प्रतिष्ठान।
           </p>
           <div class="flex items-center space-x-3 text-gold pt-2">
             <a href="#store-info" class="w-8 h-8 rounded-full bg-white/5 hover:bg-gold hover:text-white flex items-center justify-center transition" aria-label="Location">
               <i data-lucide="map-pin" class="w-4 h-4"></i>
             </a>
-            <a href="https://wa.me/?text=Hello%20Kushwaha%20Bazar" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/5 hover:bg-gold hover:text-white flex items-center justify-center transition" aria-label="WhatsApp">
+            <a href="https://wa.me/?text=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%20%E0%A4%95%E0%A5%81%E0%A4%B6%E0%A4%B5%E0%A4%BE%E0%A4%B9%E0%A4%BE%20%E0%A4%AC%E0%A4%BE%E0%A4%9C%E0%A4%BE%E0%A4%B0" target="_blank" rel="noopener noreferrer" class="w-8 h-8 rounded-full bg-white/5 hover:bg-gold hover:text-white flex items-center justify-center transition" aria-label="WhatsApp">
               <i data-lucide="message-circle" class="w-4 h-4"></i>
             </a>
           </div>
         </div>
 
-        <!-- Quick Links -->
         <div>
-          <h4 class="font-serif text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-gold/30 pb-2 inline-block">Quick Links</h4>
+          <h4 class="font-serif text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-gold/30 pb-2 inline-block" data-i18n="ft_links">मुख्य लिंक</h4>
           <ul class="space-y-2 text-xs">
-            <li><a href="#home" class="hover:text-gold transition">Home</a></li>
-            <li><a href="#collections" class="hover:text-gold transition">Collections</a></li>
-            <li><a href="#products" class="hover:text-gold transition">Trending Styles</a></li>
-            <li><a href="#about" class="hover:text-gold transition">About Us</a></li>
-            <li><a href="#gallery" class="hover:text-gold transition">Fashion Gallery</a></li>
-            <li><a href="#reviews" class="hover:text-gold transition">Customer Reviews</a></li>
+            <li><a href="#home" class="hover:text-gold transition" data-i18n="nav_home">होम</a></li>
+            <li><a href="#collections" class="hover:text-gold transition" data-i18n="nav_collections">कलेक्शन</a></li>
+            <li><a href="#products" class="hover:text-gold transition" data-i18n="nav_trending">साड़ियां व वियर</a></li>
+            <li><a href="#about" class="hover:text-gold transition" data-i18n="nav_about">हमारे बारे में</a></li>
+            <li><a href="#gallery" class="hover:text-gold transition" data-i18n="nav_gallery">गैलरी</a></li>
+            <li><a href="#reviews" class="hover:text-gold transition" data-i18n="nav_reviews">ग्राहकों की राय</a></li>
           </ul>
         </div>
 
-        <!-- Collections -->
         <div>
-          <h4 class="font-serif text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-gold/30 pb-2 inline-block">Collections</h4>
+          <h4 class="font-serif text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-gold/30 pb-2 inline-block" data-i18n="ft_col">कपड़ों की किस्में</h4>
           <ul class="space-y-2 text-xs">
-            <li><a href="#products" onclick="filterCategory('mens')" class="hover:text-gold transition">Men's Fashion</a></li>
-            <li><a href="#products" onclick="filterCategory('womens')" class="hover:text-gold transition">Women's Fashion</a></li>
-            <li><a href="#products" onclick="filterCategory('ethnic')" class="hover:text-gold transition">Ethnic & Festive Wear</a></li>
-            <li><a href="#products" onclick="filterCategory('casual')" class="hover:text-gold transition">Everyday Casuals</a></li>
-            <li><a href="#collections" class="hover:text-gold transition">All Categories</a></li>
+            <li><a href="#products" onclick="filterCategory('sarees')" class="hover:text-gold transition">बनारसी व सिल्क साड़ी</a></li>
+            <li><a href="#products" onclick="filterCategory('lehenga')" class="hover:text-gold transition">दुल्हन लहंगा व चुनरी</a></li>
+            <li><a href="#products" onclick="filterCategory('womens')" class="hover:text-gold transition">सूट्स, कुर्ती व प्लाजो</a></li>
+            <li><a href="#products" onclick="filterCategory('mens')" class="hover:text-gold transition">कुर्ता-पायजामा व मोदी जैकेट</a></li>
+            <li><a href="#products" onclick="filterCategory('mens')" class="hover:text-gold transition">शर्ट्स, पैंट व जींस</a></li>
           </ul>
         </div>
 
-        <!-- Store Info -->
         <div>
-          <h4 class="font-serif text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-gold/30 pb-2 inline-block">Store Details</h4>
+          <h4 class="font-serif text-sm font-bold text-white uppercase tracking-wider mb-4 border-b border-gold/30 pb-2 inline-block" data-i18n="ft_store">दुकान का पता</h4>
           <address class="not-italic text-xs space-y-3 text-white/70">
             <p class="flex items-start gap-2">
               <i data-lucide="map-pin" class="w-4 h-4 text-gold flex-shrink-0 mt-0.5"></i>
-              <span>Kushwaha Bazar, Uttar Mohal, Robertsganj, Uttar Pradesh 231216</span>
+              <span>उत्तर मोहाल, राबर्ट्सगंज, सोनभद्र, उत्तर प्रदेश - 231216</span>
             </p>
             <p class="flex items-start gap-2">
               <i data-lucide="clock" class="w-4 h-4 text-gold flex-shrink-0 mt-0.5"></i>
-              <span>Mon – Sun: 7:00 AM – 9:30 PM</span>
+              <span>सोमवार – रविवार: सुबह 7:00 – रात 9:30</span>
             </p>
             <p class="flex items-start gap-2">
               <i data-lucide="shopping-bag" class="w-4 h-4 text-gold flex-shrink-0 mt-0.5"></i>
-              <span>In-Store Browsing & Shopping Available</span>
+              <span>दुकान पर बैठकर खरीदारी की पूरी सुविधा</span>
             </p>
           </address>
         </div>
 
       </div>
 
-      <!-- Copyright and Dynamic Year -->
       <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-white/50 gap-4">
-        <p>&copy; <span id="current-year">2026</span> Kushwaha Bazar (कुशवाहा बाजार). All rights reserved.</p>
-        <p class="text-right">Robertsganj, Sonbhadra District, Uttar Pradesh</p>
+        <p>&copy; <span id="current-year">2026</span> कुशवाहा बाजार (Kushwaha Bazar). All rights reserved.</p>
+        <p class="text-right">उत्तर मोहाल, राबर्ट्सगंज (सोनभद्र), उत्तर प्रदेश</p>
       </div>
 
     </div>
   </footer>
 
- <!-- Floating WhatsApp Button -->
-<a
-  href="https://wa.me/?text=Hello%20Kushwaha%20Bazar%2C%20I%20am%20interested%20in%20your%20clothing%20collections."
-  target="_blank"
-  rel="noopener noreferrer"
-  aria-label="Enquire on WhatsApp"
-  title="Chat with us on WhatsApp"
-  class="fixed bottom-6 right-6 z-40 flex items-center justify-center
-         w-14 h-14 rounded-full bg-[#25D366] text-white
-         shadow-2xl border-2 border-white
-         transition-all duration-300 ease-in-out
-         hover:bg-[#1EBE5B] hover:scale-110
-         focus:outline-none focus:ring-4 focus:ring-green-300"
->
-  <!-- Official WhatsApp Logo -->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    width="30"
-    height="30"
-    fill="currentColor"
-    aria-hidden="true"
-  >
-    <path d="M20.52 3.48A11.87 11.87 0 0 0 12.05 0C5.47 0 .12 5.35.12 11.93c0 2.1.55 4.15 1.59 5.96L0 24l6.26-1.64a11.9 11.9 0 0 0 5.78 1.47h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.19-3.46-8.42ZM12.05 21.8a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-3.72.98.99-3.63-.23-.37a9.85 9.85 0 0 1-1.51-5.26c0-5.46 4.44-9.9 9.9-9.9a9.83 9.83 0 0 1 7.01 2.91 9.83 9.83 0 0 1 2.89 7c0 5.46-4.44 9.86-9.92 9.86Zm5.43-7.4c-.3-.15-1.77-.87-2.04-.97-.28-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.09 4.5.71.31 1.27.5 1.7.64.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/>
-  </svg>
-</a>
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/?text=%E0%A4%A8%E0%A4%AE%E0%A4%B8%E0%A5%8D%E0%A4%A4%E0%A5%87%20%E0%A4%95%E0%A5%81%E0%A4%B6%E0%A4%B5%E0%A4%BE%E0%A4%B9%E0%A4%BE%20%E0%A4%AC%E0%A4%BE%E0%A4%9C%E0%A4%BE%E0%A4%B0%2C%20%E0%A4%AE%E0%A5%81%E0%A4%9B%E0%A5%87%20%E0%A4%95%E0%A4%AA%E0%A4%A1%E0%A4%BC%E0%A5%8B%E0%A4%82%20%E0%A4%95%E0%A5%87%20%E0%A4%AC%E0%A4%BE%E0%A4%B0%E0%A5%87%20%E0%A4%AE%E0%A5%87%E0%A4%82%20%E0%A4%AA%E0%A5%82%E0%A4%9B%E0%A4%A8%E0%A4%BE%20%E0%A4%B9%E0%A5%88%E0%A5%A4"
+     target="_blank"
+     rel="noopener noreferrer"
+     aria-label="WhatsApp पर बात करें"
+     class="fixed bottom-6 right-6 z-40 flex items-center justify-center w-14 h-14 rounded-full bg-[#25D366] text-white shadow-2xl border-2 border-white transition-all duration-300 hover:bg-[#1EBE5B] hover:scale-110">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="30" height="30" fill="currentColor">
+      <path d="M20.52 3.48A11.87 11.87 0 0 0 12.05 0C5.47 0 .12 5.35.12 11.93c0 2.1.55 4.15 1.59 5.96L0 24l6.26-1.64a11.9 11.9 0 0 0 5.78 1.47h.01c6.58 0 11.93-5.35 11.93-11.93 0-3.19-1.24-6.19-3.46-8.42ZM12.05 21.8a9.9 9.9 0 0 1-5.05-1.38l-.36-.21-3.72.98.99-3.63-.23-.37a9.85 9.85 0 0 1-1.51-5.26c0-5.46 4.44-9.9 9.9-9.9a9.83 9.83 0 0 1 7.01 2.91 9.83 9.83 0 0 1 2.89 7c0 5.46-4.44 9.86-9.92 9.86Zm5.43-7.4c-.3-.15-1.77-.87-2.04-.97-.28-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.03-.52-.07-.15-.67-1.62-.92-2.22-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.89 1.22 3.09c.15.2 2.1 3.21 5.09 4.5.71.31 1.27.5 1.7.64.71.23 1.36.2 1.87.12.57-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.42-.07-.13-.27-.2-.57-.35Z"/>
+    </svg>
+  </a>
 
-<!-- Floating Back-to-Top Button -->
-<button
-  id="back-to-top"
-  type="button"
-  aria-label="Scroll to top of page"
-  title="Back to top"
-  class="fixed bottom-6 left-6 z-40 flex items-center justify-center
-         w-12 h-12 rounded-full bg-primary text-white
-         shadow-2xl border border-white/20
-         opacity-0 invisible pointer-events-none
-         transition-all duration-300
-         hover:bg-gold hover:scale-110
-         focus:outline-none focus:ring-4 focus:ring-yellow-300"
->
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    width="22"
-    height="22"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-    stroke-linecap="round"
-    stroke-linejoin="round"
-    aria-hidden="true"
-  >
-    <path d="m18 15-6-6-6 6"/>
-  </svg>
-</button>
-
-<!-- Back-to-Top Functionality -->
-
-
+  <!-- Floating Back-to-Top Button -->
+  <button id="back-to-top" type="button" aria-label="ऊपर जाएं"
+          class="fixed bottom-6 left-6 z-40 flex items-center justify-center w-12 h-12 rounded-full bg-primary text-white shadow-2xl border border-white/20 opacity-0 invisible transition-all duration-300 hover:bg-gold hover:scale-110">
+    <i data-lucide="chevron-up" class="w-6 h-6"></i>
+  </button>
 
   <!-- Product Quick View Modal -->
-  <div id="quickview-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm" role="dialog" aria-modal="true">
+  <div id="quickview-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/75 backdrop-blur-sm hidden" role="dialog" aria-modal="true">
     <div class="bg-white rounded-3xl max-w-2xl w-full overflow-hidden shadow-2xl relative border border-charcoal/10 max-h-[90vh] overflow-y-auto">
       <button id="close-quickview" class="absolute top-4 right-4 z-10 w-9 h-9 rounded-full bg-ivory text-primary hover:bg-gold hover:text-white flex items-center justify-center transition">
         <i data-lucide="x" class="w-5 h-5"></i>
@@ -1318,71 +1082,815 @@
       
       <div class="grid grid-cols-1 md:grid-cols-2">
         <div class="aspect-[4/5] bg-ivory overflow-hidden">
-          <img id="qv-image" src="" alt="Product View" class="w-full h-full object-cover">
+          <img id="qv-image" src="" alt="उत्पाद फोटो" class="w-full h-full object-cover">
         </div>
         <div class="p-6 sm:p-8 flex flex-col justify-between space-y-4">
           <div>
-            <span id="qv-category" class="text-xs uppercase font-semibold text-gold tracking-widest">Category</span>
+            <span id="qv-category" class="text-xs uppercase font-semibold text-maroon tracking-widest">श्रेणी</span>
             <h3 id="qv-title" class="font-serif text-2xl font-bold text-primary mt-1">Product Title</h3>
             <div class="flex items-baseline gap-2 mt-2">
               <span id="qv-price" class="text-lg font-bold text-primary">₹000</span>
               <span id="qv-original-price" class="text-xs text-muted line-through">₹000</span>
-              <span class="text-[10px] bg-gold/15 text-gold font-bold px-2 py-0.5 rounded-full">Demo Price</span>
+              <span class="text-[10px] bg-gold/15 text-gold-dark font-bold px-2 py-0.5 rounded-full" data-i18n="est_price">अनुमानित मूल्य</span>
             </div>
-            <p id="qv-desc" class="text-xs text-muted mt-3 leading-relaxed">Product description goes here.</p>
+            <p id="qv-desc" class="text-xs text-muted mt-3 leading-relaxed">विवरण यहाँ दिखेगा।</p>
           </div>
 
           <div class="space-y-3 pt-4 border-t border-charcoal/10">
-            <button id="qv-whatsapp-btn" class="w-full bg-[#25D366] hover:bg-[#1EBE5B] text-white py-3 rounded-full text-xs font-semibold tracking-wider uppercase transition flex items-center justify-center gap-2">
-              <i data-lucide="message-circle" class="w-4 h-4"></i> Enquire on WhatsApp
+            <button id="qv-whatsapp-btn" class="w-full bg-[#25D366] hover:bg-[#1EBE5B] text-white py-3 rounded-full text-xs font-bold tracking-wider uppercase transition flex items-center justify-center gap-2">
+              <i data-lucide="message-circle" class="w-4 h-4"></i> <span data-i18n="btn_ask_wa">WhatsApp पर इसके बारे में पूछें</span>
             </button>
-            <p class="text-[11px] text-center text-muted">Visit Kushwaha Bazar in Uttar Mohal to purchase.</p>
+            <p class="text-[11px] text-center text-muted" data-i18n="qv_note">कुशवाहा बाजार, उत्तर मोहाल, राबर्ट्सगंज में आकर आजमाएं।</p>
           </div>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- Image Gallery Lightbox Modal -->
-  <div id="gallery-lightbox" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md" role="dialog" aria-modal="true">
-    <button id="close-lightbox" class="absolute top-6 right-6 z-10 w-11 h-11 rounded-full bg-white/10 hover:bg-gold text-white flex items-center justify-center transition" aria-label="Close Lightbox">
+  <!-- Image Lightbox Modal -->
+  <div id="gallery-lightbox" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-md hidden" role="dialog" aria-modal="true">
+    <button id="close-lightbox" class="absolute top-6 right-6 z-10 w-11 h-11 rounded-full bg-white/10 hover:bg-gold text-white flex items-center justify-center transition">
       <i data-lucide="x" class="w-6 h-6"></i>
     </button>
-    <button id="lightbox-prev" class="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 hover:bg-gold text-white flex items-center justify-center transition" aria-label="Previous Photo">
-      <i data-lucide="chevron-left" class="w-6 h-6"></i>
-    </button>
-    <button id="lightbox-next" class="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/10 hover:bg-gold text-white flex items-center justify-center transition" aria-label="Next Photo">
-      <i data-lucide="chevron-right" class="w-6 h-6"></i>
-    </button>
-
     <div class="max-w-4xl max-h-[85vh] flex flex-col items-center">
-      <img id="lightbox-image" src="" alt="Enlarged gallery photo" class="max-w-full max-h-[75vh] object-contain rounded-lg shadow-2xl">
+      <img id="lightbox-image" src="" alt="Enlarged photo" class="max-w-full max-h-[75vh] object-contain rounded-lg shadow-2xl">
       <p id="lightbox-caption" class="text-white text-xs sm:text-sm font-light mt-4 tracking-wide text-center"></p>
     </div>
   </div>
 
   <!-- Wishlist Drawer / Summary Modal -->
-  <div id="wishlist-modal" class="modal-backdrop fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm" role="dialog" aria-modal="true">
+  <div id="wishlist-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm hidden" role="dialog" aria-modal="true">
     <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl relative border border-charcoal/10">
       <button id="close-wishlist" class="absolute top-4 right-4 w-8 h-8 rounded-full bg-ivory text-primary hover:bg-gold hover:text-white flex items-center justify-center transition">
         <i data-lucide="x" class="w-4 h-4"></i>
       </button>
       <div class="flex items-center gap-2 mb-4">
-        <i data-lucide="heart" class="w-5 h-5 text-gold fill-current"></i>
-        <h3 class="font-serif text-xl font-bold text-primary">Your Saved Wishlist</h3>
+        <i data-lucide="heart" class="w-5 h-5 text-maroon fill-current"></i>
+        <h3 class="font-serif text-xl font-bold text-primary" data-i18n="wishlist_title">आपकी पसंद (Wishlist)</h3>
       </div>
       <div id="wishlist-items-container" class="space-y-3 max-h-60 overflow-y-auto my-4 pr-1">
-        <!-- Wishlist items injected via JS -->
+        <!-- Injected via JS -->
       </div>
       <div class="pt-4 border-t border-charcoal/10 flex flex-col gap-2">
         <button id="wishlist-whatsapp-all" class="w-full bg-[#25D366] hover:bg-[#1EBE5B] text-white py-3 rounded-full text-xs font-semibold tracking-wider uppercase transition flex items-center justify-center gap-2">
-          <i data-lucide="message-circle" class="w-4 h-4"></i> Enquire All on WhatsApp
+          <i data-lucide="message-circle" class="w-4 h-4"></i> <span data-i18n="wishlist_wa_btn">ये सभी WhatsApp पर भेजें</span>
         </button>
       </div>
     </div>
   </div>
 
-  
-  <script src="script.js"></script>
+  <!-- Vanilla JS Engine: Language Translation Dictionary, Carousel, Products & Modals -->
+  <script>
+    // 1. Dual Language Dictionary (Hindi & English)
+    const translations = {
+      hi: {
+        announcement: "कुशवाहा बाजार में आपका स्वागत है — राबर्ट्सगंज का विश्वसनीय वस्त्र केंद्र",
+        timing_tag: "सुबह 7:00 से रात 9:30 तक खुला",
+        lang_switch_label: "English में देखें",
+        nav_home: "होम",
+        nav_collections: "संग्रह (कलेक्शन)",
+        nav_trending: "ट्रेंडिंग साड़ियां व परिधान",
+        nav_about: "हमारे बारे में",
+        nav_gallery: "गैलरी",
+        nav_reviews: "ग्राहकों की राय",
+        nav_store: "दुकान का पता",
+        nav_contact: "संपर्क करें",
+        hero_badge_1: "शादी-ब्याह व शुभ अवसरों की खास पसंद",
+        hero_h1_1: "शुद्ध बनारसी व कांजीवरम साड़ियों का अनूठा संग्रह",
+        hero_p_1: "जरी वर्क, सिल्क, जॉर्जेट, बांधनी और उत्सवों के लिए विशेष साड़ियां — सीधे आपके अपने शहर राबर्ट्सगंज (सोनभद्र) में।",
+        btn_explore: "कलेक्शन देखें",
+        btn_visit: "दुकान पर पधारें",
+        hero_badge_2: "त्योहारों व वैवाहिक आयोजनों के लिए",
+        hero_h1_2: "आकर्षक लहंगे, अनारकली व पार्टी वियर ड्रेसेस",
+        hero_p_2: "मनपसंद रंग, महीन कढ़ाई और बेहतरीन फैब्रिक में उपलब्ध महिलाओं के सभी फैशनेबल पारंपरिक परिधान।",
+        btn_view_designs: "डिजाइन देखें",
+        btn_contact: "पूछताछ करें",
+        hero_badge_3: "मेंस ट्रेडिशनल व फॉर्मल वियर",
+        hero_h1_3: "कुर्ता-पायजामा, नेहरू जैकेट व शर्ट्स",
+        hero_p_3: "पूजा-पाठ से लेकर शादी समारोहों तक—पुरुषों के लिए कॉटन कुर्ते, सिल्क कुर्ते और ट्रेंडी कैजुअल वियर।",
+        btn_gallery: "दुकान की तस्वीरें",
+        feat_1_title: "शुद्ध साड़ियों की विशाल रेंज",
+        feat_1_desc: "बनारसी, सिल्क, चंदेरी, कॉटन व प्रिंटेड साड़ियां।",
+        feat_2_title: "शादी व लगन स्पेशल वैरायटी",
+        feat_2_desc: "दुल्हन के जोड़े, लहंगे व परिवार के लिए कपड़े।",
+        feat_3_title: "राबर्ट्सगंज का मुख्य बाजार",
+        feat_3_desc: "उत्तर मोहाल में स्थित, सहज व सुविधाजनक पहुंच।",
+        feat_4_title: "उचित मूल्य व खरा कपड़ा",
+        feat_4_desc: "विश्वास और सही दाम—वर्षों का पारिवारिक भरोसा।",
+        col_tag: "कपड़ों की श्रेणियां",
+        col_heading: "हमारे प्रमुख वस्त्र संग्रह",
+        col_sub: "हर उम्र और अवसर के लिए उत्कृष्ट परिधानों का चयन",
+        cat_tag_1: "सदाबहार सौंदर्य",
+        cat_title_1: "साड़ी संसार (Saree Collection)",
+        cat_desc_1: "बनारसी कतान, कांजीवरम स्टाइल, जॉर्जेट, शिफॉन और डेली वियर कॉटन साड़ियां।",
+        cat_tag_2: "शुभ विवाह",
+        cat_title_2: "दुल्हन लहंगा व चोली (Bridal Wear)",
+        cat_desc_2: "शाही जरी और गोटा-पत्ती वर्क के साथ डिजाइनर लहंगे व पार्टी-वियर गाउन।",
+        cat_tag_3: "दैनिक व उत्सव",
+        cat_title_3: "सलवार सूट व कुर्ती (Suits & Kurtis)",
+        cat_desc_3: "अनारकली, पटियाला सूट, प्लाजो सेट और आरामदेह रेडीमेड कुर्तियां।",
+        cat_tag_4: "पुरुषों की शान",
+        cat_title_4: "कुर्ता-पायजामा व शेरवानी (Men's Ethnic)",
+        cat_desc_4: "त्योहारों और शादियों के लिए कढ़े हुए कुर्ते, बंडी/मोदी जैकेट और धोती सेट।",
+        cat_tag_5: "कैजुअल व फॉर्मल",
+        cat_title_5: "शर्ट, पैंट व जींस (Shirts & Trousers)",
+        cat_desc_5: "ऑफिस, कॉलेज व रोजमर्रा के लिए ब्रांडेड स्टाइल की शर्ट्स व टिकाऊ ट्राउजर।",
+        cat_tag_6: "पूरे परिवार के लिए",
+        cat_title_6: "किड्स व फैमिली वियर (Kids & Family)",
+        cat_desc_6: "बच्चों के त्योहारों के कपड़े, फ्रॉक, कुर्ता-धोती व गिफ्टिंग परिधान।",
+        cat_btn: "कलेक्शन देखें",
+        col_disclaimer: "* नई डिजाइन और ताज़ा स्टॉक देखने के लिए उत्तर मोहाल, राबर्ट्सगंज स्थित हमारी दुकान पर जरूर पधारें।",
+        prod_tag: "दुकान की खास पेशकश",
+        prod_heading: "लोकप्रिय साड़ियां व कपड़े",
+        prod_sub: "पसंद करें, विशलिस्ट में जोड़ें या सीधे WhatsApp पर रेट व फोटो मंगाएं।",
+        filter_all: "सभी कपड़े (All)",
+        filter_sarees: "साड़ियां (Sarees)",
+        filter_lehenga: "लहंगे व ब्राइडल",
+        filter_suits: "सूट्स व कुर्तियां",
+        filter_mens: "मेंस कुर्ता व वियर",
+        empty_title: "कोई परिधान नहीं मिला",
+        empty_desc: "कृपया दूसरा शब्द खोजें अथवा WhatsApp पर सीधे अपनी पसंद बताएं।",
+        empty_btn: "फ़िल्टर हटाएं",
+        note_bold: "ग्राहकों के लिए सूचना:",
+        note_text: "वेबसाइट पर दिखाए गए कपड़े व अनुमानित मूल्य उदाहरण हेतु हैं। असली फैब्रिक देखने, ट्रायल करने व विशेष छूट के लिए उत्तर मोहाल, राबर्ट्सगंज दुकान पर आएं या WhatsApp बटन दबाएं।",
+        badge_local: "कपड़ों की विश्वसनीय दुकान",
+        about_tag: "हमारी परंपरा एवं सेवा",
+        about_heading: "राबर्ट्सगंज का अपना पारिवारिक कपड़ों का प्रतिष्ठान",
+        about_p1: "उत्तर मोहाल, राबर्ट्सगंज (सोनभद्र, उ.प्र. 231216) में स्थित कुशवाहा बाजार (Kushwaha Bazar) क्षेत्र के परिवारों को आकर्षक, टिकाऊ और उचित मूल्य के वस्त्र उपलब्ध कराने के लिए सदैव समर्पित है।",
+        about_p2: "चाहे शादी-ब्याह का लगन हो, छठ, दिवाली, होली, ईद जैसे पावन पर्व हों, या रोजमर्रा में पहनने वाले आरामदायक सूती कपड़े — हम हर ग्राहक का स्वागत अपनेपन और मुस्कान के साथ करते हैं।",
+        about_p3: "हमारे यहां कपड़े का स्पर्श कर, थान व जरी की बारीकी देखकर और तसल्ली से पसंद करने की पूरी सुविधा उपलब्ध है।",
+        pillar_1_t: "दुकान पर तसल्ली से खरीदारी",
+        pillar_1_d: "कपड़ा छूकर देखें और मनपसंद रंग चुनें।",
+        pillar_2_t: "सदा सहयोगी व्यवहार",
+        pillar_2_d: "हर पसंद और बजट के अनुसार सही सुझाव।",
+        btn_view_photos: "गैलरी में साड़ियां देखें",
+        btn_get_directions: "दुकान का रास्ता देखें",
+        gal_tag: "चित्र दीर्घा",
+        gal_heading: "साड़ियां व स्टोर गैलरी",
+        gal_sub: "हमारे संग्रह की एक सुंदर झलक — बड़ा देखने के लिए किसी भी फोटो पर क्लिक करें।",
+        view_photo: "बड़ा देखें",
+        rev_tag: "ग्राहकों के अनुभव",
+        rev_heading: "राबर्ट्सगंज के लोगों की जुबानी",
+        rev_sub: "कुशवाहा बाजार पर विश्वास जताने वाले हमारे सम्मानित ग्राहकों के विचार",
+        rev_badge: "स्थानीय ग्राहक • राबर्ट्सगंज",
+        rev_cta: "स्वयं पधारें और अनुभव करें",
+        loc_tag: "दुकान का पता व समय",
+        loc_heading: "कुशवाहा बाजार पधारें",
+        loc_sub: "उत्तर मोहाल, राबर्ट्सगंज में आपका सहर्ष स्वागत है।",
+        address_text: "उत्तर मोहाल, राबर्ट्सगंज,<br>सोनभद्र, उत्तर प्रदेश - 231216, भारत",
+        timing_title: "खुलने का समय",
+        timing_days: "सातों दिन खुला (सोमवार – रविवार)",
+        timing_hours: "सुबह 7:00 बजे से रात्रि 9:30 बजे तक",
+        open_today: "आज खुला है • Open Today",
+        btn_maps: "गूगल मैप्स पर रास्ता देखें",
+        tips_title: "ग्राहकों के लिए उपयोगी जानकारी",
+        tip_1: "शादी व लगन के लिए परिवार सहित आराम से बैठकर साड़ी व कपड़े पसंद करने की व्यवस्था।",
+        tip_2: "सुबह 7 बजे से 11 बजे तक शांत व सुकून भरी खरीदारी का उत्तम समय।",
+        tip_3: "उत्तर मोहाल मेन रोड से आसानी से पहुंचने योग्य।",
+        form_tag: "सीधा संपर्क",
+        form_heading: "अपनी पसंद हमें बताएं",
+        form_sub: "नीचे फॉर्म भरें या एक क्लिक में सीधे WhatsApp पर चैट शुरू करें।",
+        form_lbl_name: "आपका शुभ नाम *",
+        form_lbl_phone: "मोबाइल नंबर *",
+        form_lbl_msg: "संदेश / क्या कपड़ा चाहिए? *",
+        err_name: "कृपया अपना नाम दर्ज करें।",
+        err_phone: "कृपया वैध 10 अंकों का फोन नंबर भरें।",
+        err_msg: "कृपया अपनी आवश्यकता लिखें।",
+        btn_send_inquiry: "पूछताछ भेजें",
+        btn_send_wa: "WhatsApp पर तुरंत पूछें",
+        faq_tag: "अक्सर पूछे जाने वाले सवाल",
+        faq_heading: "ज़रूरी प्रश्न और उत्तर",
+        faq_q1: "कुशवाहा बाजार दुकान कहां स्थित है?",
+        faq_a1: "हमारी दुकान उत्तर मोहाल, राबर्ट्सगंज, सोनभद्र (उत्तर प्रदेश) - 231216 में स्थित है। आप सीधे गूगल मैप्स द्वारा आसानी से पहुंच सकते हैं।",
+        faq_q2: "दुकान के खुलने और बंद होने का समय क्या है?",
+        faq_a2: "हम सप्ताह के सातों दिन, सोमवार से रविवार, सुबह 7:00 बजे से रात 9:30 बजे तक सेवा में उपलब्ध रहते हैं।",
+        faq_q3: "क्या शादी-विवाह के लिए थोक या ज्यादा साड़ियां मिल सकती हैं?",
+        faq_a3: "जी हां, शादी, लग्न, तिलक और विदाई के लिए साड़ी के सेट, लहंगे, चुनरी और पैंट-शर्ट के थान उचित व किफायती दर पर उपलब्ध कराए जाते हैं।",
+        faq_q4: "क्या WhatsApp पर नई डिजाइनों की फोटो मंगवाई जा सकती है?",
+        faq_a4: "बिल्कुल! आप वेबसाइट पर दिए गए 'WhatsApp' बटन पर क्लिक करके हमें संदेश भेज सकते हैं, हमारी टीम आपको उपलब्ध साड़ियों और कपड़ों के फोटो व दाम भेज देगी।",
+        ft_about: "राबर्ट्सगंज (सोनभद्र) में साड़ियों, लहंगों, कुर्ता-पायजामा और दैनिक परिधानों का सबसे विश्वसनीय स्थानीय वस्त्र प्रतिष्ठान।",
+        ft_links: "मुख्य लिंक",
+        ft_col: "कपड़ों की किस्में",
+        ft_store: "दुकान का पता",
+        est_price: "अनुमानित मूल्य",
+        btn_ask_wa: "WhatsApp पर इसके बारे में पूछें",
+        qv_note: "कुशवाहा बाजार, उत्तर मोहाल, राबर्ट्सगंज में आकर आजमाएं।",
+        wishlist_title: "आपकी पसंद (Wishlist)",
+        wishlist_wa_btn: "ये सभी WhatsApp पर भेजें"
+      },
+      en: {
+        announcement: "Welcome to Kushwaha Bazar — Robertsganj's Trusted Fashion & Saree Boutique",
+        timing_tag: "Open 7:00 AM – 9:30 PM Everyday",
+        lang_switch_label: "हिंदी में बदलें",
+        nav_home: "Home",
+        nav_collections: "Collections",
+        nav_trending: "Trending Sarees & Wear",
+        nav_about: "About Us",
+        nav_gallery: "Gallery",
+        nav_reviews: "Reviews",
+        nav_store: "Store & Hours",
+        nav_contact: "Contact",
+        hero_badge_1: "Weddings & Festive Specials",
+        hero_h1_1: "Exquisite Banarasi & Kanjivaram Sarees",
+        hero_p_1: "Pure zari work, silk, georgette, bandhani, and celebratory sarees right in Uttar Mohal, Robertsganj (Sonbhadra).",
+        btn_explore: "Explore Collections",
+        btn_visit: "Visit In-Store",
+        hero_badge_2: "Festivals & Celebrations",
+        hero_h1_2: "Stunning Bridal Lehengas & Ethnic Suits",
+        hero_p_2: "Embroidered wedding sets, regal gowns, and versatile ethnic apparel for every special family occasion.",
+        btn_view_designs: "View Designs",
+        btn_contact: "Get in Touch",
+        hero_badge_3: "Men's Traditional & Casuals",
+        hero_h1_3: "Kurta-Pajamas, Modi Jackets & Fine Shirts",
+        hero_p_3: "From puja ceremonies to wedding receptions—cotton kurtas, silk sets, and crisp tailored shirts.",
+        btn_gallery: "Store Gallery",
+        feat_1_title: "Vast Saree Collection",
+        feat_1_desc: "Banarasi, silk, chanderi, georgette, and printed cottons.",
+        feat_2_title: "Bridal & Wedding Ensembles",
+        feat_2_desc: "Bridal lehengas, chunari sets, and family matching wear.",
+        feat_3_title: "Central Robertsganj Location",
+        feat_3_desc: "Conveniently situated in Uttar Mohal commercial area.",
+        feat_4_title: "Authentic Fabric & Honest Prices",
+        feat_4_desc: "Quality, fair pricing, and long-standing local trust.",
+        col_tag: "Curated Categories",
+        col_heading: "Our Clothing Collections",
+        col_sub: "Handpicked styles for every generation and occasion",
+        cat_tag_1: "Timeless Grace",
+        cat_title_1: "Saree Collection",
+        cat_desc_1: "Banarasi katan, Kanjivaram style, lightweight georgettes, and daily comfort sarees.",
+        cat_tag_2: "Weddings",
+        cat_title_2: "Bridal & Wedding Lehengas",
+        cat_desc_2: "Intricate zari, mirror work, and heavy embroidery lehenga sets.",
+        cat_tag_3: "Daily & Occasions",
+        cat_title_3: "Salwar Suits & Kurtis",
+        cat_desc_3: "Anarkalis, Patiala suits, sharara sets, and comfortable readymade kurtis.",
+        cat_tag_4: "Men's Heritage",
+        cat_title_4: "Kurta-Pajama & Sherwanis",
+        cat_desc_4: "Festive embroidered kurtas, Nehru jackets, and dhoti sets.",
+        cat_tag_5: "Casual & Workwear",
+        cat_title_5: "Shirts, Trousers & Denim",
+        cat_desc_5: "Sharp shirts and durable bottom-wear for daily work and college.",
+        cat_tag_6: "For All Ages",
+        cat_title_6: "Kids & Family Wear",
+        cat_desc_6: "Children's ethnic wear, frocks, gifting sets, and festive outfits.",
+        cat_btn: "Explore Collection",
+        col_disclaimer: "* Visit our Uttar Mohal, Robertsganj store to experience real fabric textures and new arrivals.",
+        prod_tag: "In-Store Highlights",
+        prod_heading: "Trending Sarees & Outfits",
+        prod_sub: "Shortlist, save to wishlist, or inquire directly on WhatsApp with photos.",
+        filter_all: "All Styles",
+        filter_sarees: "Sarees",
+        filter_lehenga: "Lehengas & Bridal",
+        filter_suits: "Suits & Kurtis",
+        filter_mens: "Men's Ethnic",
+        empty_title: "No styles found",
+        empty_desc: "Try searching with another keyword or connect directly with us on WhatsApp.",
+        empty_btn: "Reset Filter",
+        note_bold: "Shopper Note:",
+        note_text: "Displayed items and prices are indicative catalog samples. Visit our store in Robertsganj or click WhatsApp for exact fabric feel and live sizes.",
+        badge_local: "Trusted Fashion Hub",
+        about_tag: "Our Heritage & Service",
+        about_heading: "Robertsganj's Family Clothing Destination",
+        about_p1: "Located at Uttar Mohal, Robertsganj (Sonbhadra, UP 231216), Kushwaha Bazar is committed to bringing top quality, durable, and affordable clothing to our regional community.",
+        about_p2: "Whether you are shopping for a wedding season, festivals like Diwali, Chhath, or Holi, or everyday cotton apparel, we welcome every visitor with personalized attention.",
+        about_p3: "Feel the fabrics, inspect the zari craftsmanship, and try on your selections with confidence.",
+        pillar_1_t: "In-Person Fitting Experience",
+        pillar_1_d: "Inspect fabrics in person and select your ideal color.",
+        pillar_2_t: "Attentive Hospitality",
+        pillar_2_d: "Personalized recommendations for every budget.",
+        btn_view_photos: "View Saree Gallery",
+        btn_get_directions: "Get Store Directions",
+        gal_tag: "Visual Showcase",
+        gal_heading: "Saree & Boutique Gallery",
+        gal_sub: "A visual peek into our displays — click any image to enlarge.",
+        view_photo: "Enlarge Photo",
+        rev_tag: "Customer Reviews",
+        rev_heading: "Loved by Robertsganj Locals",
+        rev_sub: "Genuine feedback and appreciation shared by our patrons.",
+        rev_badge: "Local Shopper • Robertsganj",
+        rev_cta: "Visit us in person",
+        loc_tag: "Store & Timings",
+        loc_heading: "Visit Kushwaha Bazar",
+        loc_sub: "We warmly look forward to welcoming you at Uttar Mohal, Robertsganj.",
+        address_text: "Uttar Mohal, Robertsganj,<br>Sonbhadra, Uttar Pradesh - 231216, India",
+        timing_title: "Opening Hours",
+        timing_days: "Open 7 Days (Monday – Sunday)",
+        timing_hours: "7:00 AM to 9:30 PM IST",
+        open_today: "Open Today",
+        btn_maps: "Get Directions on Google Maps",
+        tips_title: "Visitor Tips",
+        tip_1: "Spacious seating for family wedding shopping and saree selection.",
+        tip_2: "Morning hours (7 AM – 11 AM) are optimal for peaceful browsing.",
+        tip_3: "Centrally accessible in the heart of Uttar Mohal.",
+        form_tag: "Direct Inquiry",
+        form_heading: "Let Us Know What You Need",
+        form_sub: "Fill out the quick form or start a chat directly on WhatsApp.",
+        form_lbl_name: "Your Name *",
+        form_lbl_phone: "Phone Number *",
+        form_lbl_msg: "Message / What clothing are you looking for? *",
+        err_name: "Please enter your name.",
+        err_phone: "Please enter a valid 10-digit phone number.",
+        err_msg: "Please write your requirement.",
+        btn_send_inquiry: "Send Inquiry",
+        btn_send_wa: "Chat on WhatsApp Instantly",
+        faq_tag: "Frequently Asked Questions",
+        faq_heading: "Store Details & Answers",
+        faq_q1: "Where is Kushwaha Bazar located?",
+        faq_a1: "Our store is located at Uttar Mohal, Robertsganj, Sonbhadra (Uttar Pradesh) - 231216. You can navigate directly via Google Maps.",
+        faq_q2: "What are your business hours?",
+        faq_a2: "We are open 7 days a week, Monday through Sunday, from 7:00 AM to 9:30 PM.",
+        faq_q3: "Do you have bulk sarees for wedding functions?",
+        faq_a3: "Yes, we specialize in bulk saree collections, bridal lehengas, chunaris, and gifting fabrics at genuine rates.",
+        faq_q4: "Can I get photos of new designs on WhatsApp?",
+        faq_a4: "Yes! Simply tap the WhatsApp button on this site and send us a message. Our team will share available photos and details.",
+        ft_about: "The most trusted clothing destination in Robertsganj for sarees, lehengas, kurtas, and everyday family wear.",
+        ft_links: "Quick Links",
+        ft_col: "Clothing Varieties",
+        ft_store: "Store Details",
+        est_price: "Estimated Price",
+        btn_ask_wa: "Inquire about this on WhatsApp",
+        qv_note: "Visit Kushwaha Bazar, Uttar Mohal to try in person.",
+        wishlist_title: "Your Saved Items (Wishlist)",
+        wishlist_wa_btn: "Inquire all on WhatsApp"
+      }
+    };
+
+    let currentLang = 'hi';
+
+    function setLanguage(lang) {
+      currentLang = lang;
+      const dict = translations[lang];
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) {
+          el.innerHTML = dict[key];
+        }
+      });
+
+      const langBtnLabel = document.getElementById('current-lang-label');
+      if (langBtnLabel) {
+        langBtnLabel.textContent = dict.lang_switch_label;
+      }
+
+      // Update placeholders
+      const searchInput = document.getElementById('product-search-input');
+      if (searchInput) {
+        searchInput.placeholder = lang === 'hi' ? "साड़ी, लहंगा या कुर्ता खोजें..." : "Search Sarees, Lehengas, Kurtas...";
+      }
+
+      renderProducts(activeCategory, searchInput ? searchInput.value : '');
+    }
+
+    document.getElementById('lang-switch-btn').addEventListener('click', () => {
+      setLanguage(currentLang === 'hi' ? 'en' : 'hi');
+    });
+
+    // 2. Realistic Saree & Clothing Store Products
+    const products = [
+      {
+        id: "p1",
+        name_hi: "शाही लाल बनारसी कतान सिल्क साड़ी",
+        name_en: "Royal Bridal Red Banarasi Silk Saree",
+        category: "sarees",
+        cat_label_hi: "सिल्क साड़ी",
+        cat_label_en: "Silk Saree",
+        price: "₹3,450",
+        orig_price: "₹4,200",
+        image: "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=700&q=80",
+        desc_hi: "शादी व लगन के लिए जरी के भारी आंचल और बूटी वर्क के साथ पारंपरिक बनारसी साड़ी।",
+        desc_en: "Traditional pure Banarasi saree with rich zari pallu and all-over booti work, perfect for brides and family weddings."
+      },
+      {
+        id: "p2",
+        name_hi: "हल्दी स्पेशल पीतांबरी सिल्क साड़ी",
+        name_en: "Haldi Special Mustard Yellow Silk Saree",
+        category: "sarees",
+        cat_label_hi: "पूजा व उत्सव",
+        cat_label_en: "Festive Silk",
+        price: "₹2,150",
+        orig_price: "₹2,699",
+        image: "https://images.unsplash.com/photo-1617627143750-d86bc21e42bb?auto=format&fit=crop&w=700&q=80",
+        desc_hi: "हल्दी रस्म, पूजा और गृह-प्रवेश के लिए सुंदर सुनहरी बॉर्डर वाली चटक पीली सिल्क साड़ी।",
+        desc_en: "Radiant mustard yellow festive silk saree with intricate golden zari border, best for Haldi and rituals."
+      },
+      {
+        id: "p3",
+        name_hi: "दुल्हन मैरून वेलवेट व जरी लहंगा",
+        name_en: "Bridal Crimson Velvet Zari Lehenga",
+        category: "lehenga",
+        cat_label_hi: "ब्राइडल लहंगा",
+        cat_label_en: "Bridal Lehenga",
+        price: "₹7,800",
+        orig_price: "₹9,500",
+        image: "https://images.unsplash.com/photo-1583391733956-3750e0ff4e8b?auto=format&fit=crop&w=700&q=80",
+        desc_hi: "महीन गोटा-पत्ती और दस्तकारी से सजा दुल्हन का भारी लहंगा, मैचिंग ब्लाउज और दो दुपट्टे।",
+        desc_en: "Handcrafted bridal velvet lehenga featuring intricate zari borders, heavy flared skirt, and designer choli."
+      },
+      {
+        id: "p4",
+        name_hi: "पुरुषों का उत्सव कुर्ता व चूड़ीदार सेट",
+        name_en: "Men's Embroidered Silk Kurta-Pajama",
+        category: "mens",
+        cat_label_hi: "मेंस कुर्ता",
+        cat_label_en: "Men's Ethnic",
+        price: "₹1,850",
+        orig_price: "₹2,299",
+        image: "https://images.unsplash.com/photo-1597983073493-88cd35cf93b0?auto=format&fit=crop&w=700&q=80",
+        desc_hi: "सॉफ्ट सिल्क फैब्रिक में कढ़ा हुआ कॉलर और बटन वर्क, शादी और पारिवारिक उत्सवों के लिए उत्तम।",
+        desc_en: "Embroidered mandarin collar men's kurta paired with churidar pajama, tailored for wedding functions."
+      },
+      {
+        id: "p5",
+        name_hi: "पार्टी वियर अनारकली सूट व दुपट्टा",
+        name_en: "Festive Embroidered Anarkali Suit Set",
+        category: "womens",
+        cat_label_hi: "सूट व कुर्ती",
+        cat_label_en: "Suit Set",
+        price: "₹2,600",
+        orig_price: "₹3,199",
+        image: "https://images.unsplash.com/photo-1574634534894-89d7576c8259?auto=format&fit=crop&w=700&q=80",
+        desc_hi: "फ्लेयरदार अनारकली सूट, पैंट और नेट का कढ़ाईदार दुपट्टा, बेहद आकर्षक और आरामदायक।",
+        desc_en: "Flowing Anarkali suit set with detailed thread embroidery and coordinating dupatta."
+      },
+      {
+        id: "p6",
+        name_hi: "हैंडलूम चंदेरी कॉटन प्रिंटेड साड़ी",
+        name_en: "Handloom Chanderi Cotton Daily Saree",
+        category: "sarees",
+        cat_label_hi: "कॉटन साड़ी",
+        cat_label_en: "Cotton Saree",
+        price: "₹1,250",
+        orig_price: "₹1,550",
+        image: "https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=700&q=80",
+        desc_hi: "गर्मियों व दैनिक उपयोग के लिए हल्की, सांस लेने योग्य और खूबसूरत रंगों वाली कॉटन साड़ी।",
+        desc_en: "Breathable and elegant lightweight cotton Chanderi saree for office, teachers, and daily elegance."
+      },
+      {
+        id: "p7",
+        name_hi: "मेंस कॉटन फॉर्मल व पार्टी शर्ट",
+        name_en: "Men's Premium Cotton Formal Shirt",
+        category: "mens",
+        cat_label_hi: "मेंस वियर",
+        cat_label_en: "Men's Shirt",
+        price: "₹899",
+        orig_price: "₹1,199",
+        image: "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=700&q=80",
+        desc_hi: "100% शुद्ध कॉटन, आरामदायक फिट और लंबे समय तक चलने वाले रंग में उपलब्ध।",
+        desc_en: "Premium cotton regular-fit shirt suitable for formal meetings, office, and smart casual gatherings."
+      },
+      {
+        id: "p8",
+        name_hi: "फेस्टिव कांजीवरम स्टाइल सिल्क साड़ी",
+        name_en: "Royal Kanjivaram Style Silk Saree",
+        category: "sarees",
+        cat_label_hi: "कांजीवरम सिल्क",
+        cat_label_en: "Kanjivaram Style",
+        price: "₹3,950",
+        orig_price: "₹4,800",
+        image: "https://images.unsplash.com/photo-1566737236500-c8ac43014a67?auto=format&fit=crop&w=700&q=80",
+        desc_hi: "चौड़े जरी बॉर्डर और खूबसूरत पल्लू के साथ दक्षिण भारतीय स्टाइल की भव्य सिल्क साड़ी।",
+        desc_en: "South Indian style grand silk saree with broad zari border and rich pallu for weddings and pujas."
+      }
+    ];
+
+    let wishlist = [];
+    let activeCategory = 'all';
+
+    function renderProducts(cat = 'all', query = '') {
+      const grid = document.getElementById('product-grid');
+      const emptyState = document.getElementById('empty-products');
+      if (!grid) return;
+
+      const q = query.toLowerCase().trim();
+      const filtered = products.filter(p => {
+        const matchesCat = (cat === 'all' || p.category === cat);
+        const nameText = (currentLang === 'hi' ? p.name_hi : p.name_en).toLowerCase();
+        const descText = (currentLang === 'hi' ? p.desc_hi : p.desc_en).toLowerCase();
+        const matchesQuery = !q || nameText.includes(q) || descText.includes(q);
+        return matchesCat && matchesQuery;
+      });
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        emptyState.classList.remove('hidden');
+        return;
+      }
+
+      emptyState.classList.add('hidden');
+      grid.innerHTML = filtered.map(item => {
+        const title = currentLang === 'hi' ? item.name_hi : item.name_en;
+        const catLabel = currentLang === 'hi' ? item.cat_label_hi : item.cat_label_en;
+        const isWishlisted = wishlist.includes(item.id);
+        const waMsg = encodeURIComponent(`नमस्ते कुशवाहा बाजार, मुझे "${title}" (${item.price}) के बारे में जानकारी व फोटो चाहिए।`);
+
+        return `
+          <div class="product-card group bg-white rounded-2xl overflow-hidden border border-charcoal/10 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between">
+            <div class="relative aspect-[4/5] bg-ivory overflow-hidden cursor-pointer" onclick="openQuickView('${item.id}')">
+              <img src="${item.image}" alt="${title}" class="w-full h-full object-cover transition duration-500 group-hover:scale-105">
+              <span class="absolute top-3 left-3 bg-primary/90 text-gold-light text-[10px] font-bold px-2.5 py-1 rounded-full uppercase tracking-wider backdrop-blur-sm">${catLabel}</span>
+              <button onclick="event.stopPropagation(); toggleWishlist('${item.id}')" aria-label="Wishlist" class="absolute top-3 right-3 w-8 h-8 rounded-full bg-white/90 text-charcoal hover:text-maroon flex items-center justify-center transition shadow">
+                <i data-lucide="heart" class="w-4 h-4 ${isWishlisted ? 'fill-maroon text-maroon' : ''}"></i>
+              </button>
+            </div>
+            <div class="p-4 flex flex-col flex-grow justify-between">
+              <div>
+                <h4 class="font-serif font-bold text-sm text-primary line-clamp-1 group-hover:text-gold transition cursor-pointer" onclick="openQuickView('${item.id}')">${title}</h4>
+                <div class="flex items-baseline gap-2 mt-2">
+                  <span class="text-base font-bold text-primary">${item.price}</span>
+                  <span class="text-xs text-muted line-through">${item.orig_price}</span>
+                </div>
+              </div>
+              <div class="pt-4 flex gap-2">
+                <button onclick="openQuickView('${item.id}')" class="flex-1 py-2 rounded-full border border-charcoal/20 text-xs font-semibold hover:border-gold hover:text-gold transition">
+                  ${currentLang === 'hi' ? 'देखें' : 'View'}
+                </button>
+                <a href="https://wa.me/?text=${waMsg}" target="_blank" rel="noopener noreferrer" class="px-3 py-2 rounded-full bg-[#25D366] hover:bg-[#1EBE5B] text-white flex items-center justify-center transition">
+                  <i data-lucide="message-circle" class="w-4 h-4"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      lucide.createIcons();
+    }
+
+    function filterCategory(cat) {
+      activeCategory = cat;
+      document.querySelectorAll('.cat-btn').forEach(btn => {
+        if (btn.getAttribute('data-cat') === cat) {
+          btn.classList.add('active', 'bg-primary', 'text-white');
+          btn.classList.remove('bg-ivory', 'text-charcoal');
+        } else {
+          btn.classList.remove('active', 'bg-primary', 'text-white');
+          btn.classList.add('bg-ivory', 'text-charcoal');
+        }
+      });
+      const q = document.getElementById('product-search-input').value;
+      renderProducts(activeCategory, q);
+    }
+
+    document.querySelectorAll('.cat-btn').forEach(btn => {
+      btn.addEventListener('click', () => filterCategory(btn.getAttribute('data-cat')));
+    });
+
+    // Search Box
+    const searchInput = document.getElementById('product-search-input');
+    const clearBtn = document.getElementById('clear-search-btn');
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        const val = e.target.value;
+        if (val.length > 0) clearBtn.classList.remove('hidden');
+        else clearBtn.classList.add('hidden');
+        renderProducts(activeCategory, val);
+      });
+      clearBtn.addEventListener('click', () => {
+        searchInput.value = '';
+        clearBtn.classList.add('hidden');
+        renderProducts(activeCategory, '');
+      });
+    }
+
+    document.getElementById('reset-filter-btn')?.addEventListener('click', () => {
+      if (searchInput) searchInput.value = '';
+      clearBtn?.classList.add('hidden');
+      filterCategory('all');
+    });
+
+    // Wishlist Toggle
+    function toggleWishlist(id) {
+      if (wishlist.includes(id)) {
+        wishlist = wishlist.filter(item => item !== id);
+      } else {
+        wishlist.push(id);
+      }
+      document.getElementById('wishlist-badge').textContent = wishlist.length;
+      renderProducts(activeCategory, searchInput ? searchInput.value : '');
+    }
+
+    // Quick View Modal
+    const qvModal = document.getElementById('quickview-modal');
+    function openQuickView(id) {
+      const item = products.find(p => p.id === id);
+      if (!item || !qvModal) return;
+
+      document.getElementById('qv-image').src = item.image;
+      document.getElementById('qv-category').textContent = currentLang === 'hi' ? item.cat_label_hi : item.cat_label_en;
+      document.getElementById('qv-title').textContent = currentLang === 'hi' ? item.name_hi : item.name_en;
+      document.getElementById('qv-price').textContent = item.price;
+      document.getElementById('qv-original-price').textContent = item.orig_price;
+      document.getElementById('qv-desc').textContent = currentLang === 'hi' ? item.desc_hi : item.desc_en;
+
+      const waMsg = encodeURIComponent(`नमस्ते कुशवाहा बाजार, मुझे "${currentLang === 'hi' ? item.name_hi : item.name_en}" (${item.price}) के बारे में पूछना है।`);
+      document.getElementById('qv-whatsapp-btn').onclick = () => {
+        window.open(`https://wa.me/?text=${waMsg}`, '_blank');
+      };
+
+      qvModal.classList.remove('hidden');
+      lucide.createIcons();
+    }
+
+    document.getElementById('close-quickview')?.addEventListener('click', () => {
+      qvModal.classList.add('hidden');
+    });
+
+    qvModal?.addEventListener('click', (e) => {
+      if (e.target === qvModal) qvModal.classList.add('hidden');
+    });
+
+    // Wishlist Modal View
+    const wishlistModal = document.getElementById('wishlist-modal');
+    document.getElementById('wishlist-btn')?.addEventListener('click', () => {
+      const container = document.getElementById('wishlist-items-container');
+      if (wishlist.length === 0) {
+        container.innerHTML = `<p class="text-xs text-muted text-center py-6">${currentLang === 'hi' ? 'कोई परिधान विशलिस्ट में नहीं है।' : 'No items saved in wishlist.'}</p>`;
+      } else {
+        const savedItems = products.filter(p => wishlist.includes(p.id));
+        container.innerHTML = savedItems.map(p => `
+          <div class="flex items-center justify-between p-2 rounded-xl bg-ivory border border-charcoal/10">
+            <div class="flex items-center gap-3">
+              <img src="${p.image}" class="w-12 h-12 object-cover rounded-lg">
+              <div>
+                <h5 class="text-xs font-bold text-primary">${currentLang === 'hi' ? p.name_hi : p.name_en}</h5>
+                <span class="text-xs text-gold font-semibold">${p.price}</span>
+              </div>
+            </div>
+            <button onclick="toggleWishlist('${p.id}'); document.getElementById('wishlist-btn').click();" class="text-xs text-rose-500 font-bold px-2">✕</button>
+          </div>
+        `).join('');
+      }
+      wishlistModal.classList.remove('hidden');
+    });
+
+    document.getElementById('close-wishlist')?.addEventListener('click', () => {
+      wishlistModal.classList.add('hidden');
+    });
+
+    document.getElementById('wishlist-whatsapp-all')?.addEventListener('click', () => {
+      if (wishlist.length === 0) return;
+      const savedItems = products.filter(p => wishlist.includes(p.id));
+      const names = savedItems.map(i => currentLang === 'hi' ? i.name_hi : i.name_en).join(', ');
+      const msg = encodeURIComponent(`नमस्ते कुशवाहा बाजार, मुझे इन कपड़ों के बारे में जानकारी चाहिए: ${names}`);
+      window.open(`https://wa.me/?text=${msg}`, '_blank');
+    });
+
+    // Lightbox Gallery
+    const lightbox = document.getElementById('gallery-lightbox');
+    const lbImage = document.getElementById('lightbox-image');
+    const lbCaption = document.getElementById('lightbox-caption');
+
+    document.querySelectorAll('.gallery-item').forEach(item => {
+      item.addEventListener('click', () => {
+        lbImage.src = item.getAttribute('data-src');
+        lbCaption.textContent = item.getAttribute('data-title');
+        lightbox.classList.remove('hidden');
+      });
+    });
+
+    document.getElementById('close-lightbox')?.addEventListener('click', () => {
+      lightbox.classList.add('hidden');
+    });
+
+    lightbox?.addEventListener('click', (e) => {
+      if (e.target === lightbox) lightbox.classList.add('hidden');
+    });
+
+    // Hero Slider
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots = document.querySelectorAll('.hero-dot');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+      slides.forEach((s, i) => {
+        if (i === index) {
+          s.classList.remove('opacity-0', 'pointer-events-none');
+          s.classList.add('opacity-100');
+        } else {
+          s.classList.remove('opacity-100');
+          s.classList.add('opacity-0', 'pointer-events-none');
+        }
+      });
+      dots.forEach((d, i) => {
+        if (i === index) {
+          d.classList.add('bg-gold', 'ring-2', 'ring-white/50');
+          d.classList.remove('bg-white/40');
+        } else {
+          d.classList.remove('bg-gold', 'ring-2', 'ring-white/50');
+          d.classList.add('bg-white/40');
+        }
+      });
+      currentSlide = index;
+    }
+
+    document.getElementById('hero-next')?.addEventListener('click', () => {
+      showSlide((currentSlide + 1) % slides.length);
+    });
+    document.getElementById('hero-prev')?.addEventListener('click', () => {
+      showSlide((currentSlide - 1 + slides.length) % slides.length);
+    });
+    dots.forEach((dot, idx) => {
+      dot.addEventListener('click', () => showSlide(idx));
+    });
+    setInterval(() => {
+      showSlide((currentSlide + 1) % slides.length);
+    }, 6000);
+
+    // Testimonials Slider
+    const testItems = document.querySelectorAll('.testimonial-item');
+    let currentTest = 0;
+    function showTestimonial(index) {
+      testItems.forEach((t, i) => {
+        if (i === index) t.classList.remove('hidden');
+        else t.classList.add('hidden');
+      });
+      currentTest = index;
+    }
+    document.getElementById('test-next')?.addEventListener('click', () => {
+      showTestimonial((currentTest + 1) % testItems.length);
+    });
+    document.getElementById('test-prev')?.addEventListener('click', () => {
+      showTestimonial((currentTest - 1 + testItems.length) % testItems.length);
+    });
+
+    // FAQs Accordion
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const answer = button.nextElementSibling;
+        const arrow = button.querySelector('.faq-arrow');
+        const isOpen = !answer.classList.contains('hidden');
+
+        document.querySelectorAll('.faq-answer').forEach(a => a.classList.add('hidden'));
+        document.querySelectorAll('.faq-arrow').forEach(arr => arr.classList.remove('rotate-180'));
+
+        if (!isOpen) {
+          answer.classList.remove('hidden');
+          arrow.classList.add('rotate-180');
+        }
+      });
+    });
+
+    // Contact Form & WhatsApp Integration
+    const contactForm = document.getElementById('contact-form');
+    contactForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('contact-name').value.trim();
+      const phone = document.getElementById('contact-phone').value.trim();
+      const msg = document.getElementById('contact-message').value.trim();
+
+      let valid = true;
+      if (!name) { document.getElementById('name-error').classList.remove('hidden'); valid = false; }
+      else document.getElementById('name-error').classList.add('hidden');
+
+      if (!phone || phone.length < 10) { document.getElementById('phone-error').classList.remove('hidden'); valid = false; }
+      else document.getElementById('phone-error').classList.add('hidden');
+
+      if (!msg) { document.getElementById('message-error').classList.remove('hidden'); valid = false; }
+      else document.getElementById('message-error').classList.add('hidden');
+
+      if (valid) {
+        const feedback = document.getElementById('form-feedback');
+        feedback.className = "p-4 rounded-xl text-xs font-semibold bg-emerald-100 text-emerald-800";
+        feedback.textContent = currentLang === 'hi' 
+          ? "धन्यवाद! आपकी पूछताछ प्राप्त हो गई है। हम शीघ्र संपर्क करेंगे।" 
+          : "Thank you! Your inquiry has been received. We will contact you soon.";
+        feedback.classList.remove('hidden');
+        contactForm.reset();
+      }
+    });
+
+    document.getElementById('whatsapp-direct-btn')?.addEventListener('click', () => {
+      const name = document.getElementById('contact-name').value.trim() || 'ग्राहक';
+      const msg = document.getElementById('contact-message').value.trim() || 'साड़ियों और कपड़ों के संग्रह के बारे में जानकारी चाहिए';
+      const text = encodeURIComponent(`नमस्ते कुशवाहा बाजार, मेरा नाम ${name} है। ${msg}`);
+      window.open(`https://wa.me/?text=${text}`, '_blank');
+    });
+
+    // Back to top & Mobile Nav
+    const backToTop = document.getElementById('back-to-top');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 400) {
+        backToTop.classList.remove('opacity-0', 'invisible');
+        backToTop.classList.add('opacity-100');
+      } else {
+        backToTop.classList.add('opacity-0', 'invisible');
+        backToTop.classList.remove('opacity-100');
+      }
+    });
+    backToTop?.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn?.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+
+    // Initialize Page
+    document.addEventListener('DOMContentLoaded', () => {
+      renderProducts('all', '');
+      lucide.createIcons();
+    });
+  </script>
 </body>
 </html>
